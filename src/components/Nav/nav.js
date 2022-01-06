@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { jsx } from "theme-ui";
 import { StaticImage } from "gatsby-plugin-image";
-import { navStyles } from "../utils";
+import { navStyles } from "../../utils";
 
 const Nav = () => {
 

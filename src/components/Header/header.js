@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx } from "theme-ui";
-import { headerStyles } from "../utils/headerStyles";
+import { headerStyles } from "../../utils/headerStyles";
 
 const Header = () => {
   return (
