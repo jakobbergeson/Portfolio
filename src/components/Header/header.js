@@ -9,6 +9,36 @@ const Header = () => {
       sx={headerStyles.wrapper}
     >
       <div
+        sx={headerStyles.container}
+      >
+        <div
+          sx={headerStyles.headingBox}
+        >
+          <div
+            sx={headerStyles.heading1}
+          >
+            Full-
+            <div
+              sx={headerStyles.heading2}
+            >
+              Stack
+            </div>
+          </div>
+          <div
+            sx={headerStyles.heading2}
+          >
+            Software
+          </div>
+          <div
+            sx={headerStyles.heading2}
+          >
+            Developer
+          </div>
+
+        </div>
+
+      </div>
+      <div
         sx={headerStyles.anglBox1}
       />
       <div
