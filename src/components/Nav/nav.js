@@ -22,12 +22,12 @@ const Nav = () => {
         <div sx={navStyles.container.icon}>
           {bg ?
             <StaticImage
-              src="../images/Icon_Blue.png"
+              src="../../images/Icon_Blue.png"
               alt="Jakob Bergeson Development"
             />
             :
             <StaticImage
-              src="../images/Icon.png"
+              src="../../images/Icon.png"
               alt="Jakob Bergeson Development"
             />
           }
