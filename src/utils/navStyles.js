@@ -24,8 +24,6 @@ export const navStyles = {
         display: 'flex',
         position: 'relative',
         borderRadius: '50%',
-        transform: 'scale(1)',
-        transition: 'border-radius .3s ease, background-color .3s ease, color .3s ease, transform .3s ease',
         WebkitAlignItems: 'center',
         WebkitBoxAlign: 'center',
         msFlexAlign: 'center',
@@ -43,11 +41,8 @@ export const navStyles = {
         marginTop: '8px',
         marginBottom: '8px',
         '&:hover': {
-          borderRadius: '20%',
           bg: 'primary',
           color: 'darkBlue',
-          transform: 'scale(1.1)',
-          transition: 'border-radius .3s ease, background-color .3s ease, color .3s ease, transform .3s ease'
         },
         'a': {
           m: 0,
