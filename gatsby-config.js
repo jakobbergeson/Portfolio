@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
-    title: 'Jakob Bergeson Development',
+    title: 'Jakob Bergeson',
   },
   plugins: [
 

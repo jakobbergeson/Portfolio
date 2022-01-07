@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx } from "theme-ui";
+import Title from "../Title/title";
 import { layoutStyles } from '../../utils/';
 
 const Layout = ({ children }) => {
@@ -8,9 +9,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <article>
+        <Title title='Portfolio' />
         <a
           sx={layoutStyles.icon}
-          href='#header'
         >
           [J]
         </a>
