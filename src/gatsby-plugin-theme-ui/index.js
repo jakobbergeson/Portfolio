@@ -26,6 +26,7 @@ const theme = {
       bg: 'primary',
       letterSpacing: '.17em',
       boxSizing: 'border-box',
+      minWidth: 0,
       ul: {
         listStyle: 'none',
       },

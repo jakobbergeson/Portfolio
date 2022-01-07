@@ -10,7 +10,6 @@ import Home from '../components/Home/home';
 const IndexPage = () => {
   return (
     <Layout>
-      <Nav />
       <Header />
       <div
         sx={{
@@ -20,7 +19,9 @@ const IndexPage = () => {
         }}
       >
         <Home />
-
+        <div
+          sx={{ height: '100vh' }}
+        />
       </div>
     </Layout>
   );

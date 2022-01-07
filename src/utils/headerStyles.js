@@ -22,7 +22,8 @@ export const headerStyles = {
     minWidth: 0,
     display: 'flex',
     position: 'relative',
-    ml: [0, null, '32px'],
+    ml: [0, null, '80px'],
+    mr: [0, null, '60px'],
     mb: '48px',
     WebkitFlex: 1,
     flex: 1,
@@ -30,7 +31,7 @@ export const headerStyles = {
     WebkitBoxAlign: 'center',
     MsFlexAlign: 'center',
     alignItems: 'center',
-    justifyContent: ['center', null, 'start']
+    justifyContent: ['center', null, 'space-between'],
   },
   headingBox: {
     boxSizing: 'border-box',
