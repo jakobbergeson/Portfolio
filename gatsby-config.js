@@ -13,7 +13,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Merriweather+Sans\:300,400,500,600,700,800`
+          `Merriweather+Sans\:300,400,500,600,700,800`,
+          `Gudea\:400`,
         ],
         display: 'swap'
       }

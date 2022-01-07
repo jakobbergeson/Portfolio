@@ -7,6 +7,7 @@ export const navStyles = {
     fontWeight: 'heading',
     fontSize: [1, null, 2, 3],
     zIndex: 1000,
+    ml: 4,
   },
   container: {
     display: 'flex',
@@ -35,8 +36,8 @@ export const navStyles = {
         justifyContent: 'center',
         cursor: 'pointer',
         border: '1px solid #f6f6f6',
-        width: ['50px', null, '80px'],
-        height: ['50px', null, '80px'],
+        width: ['50px', null, '70px', null, '90px'],
+        height: ['50px', null, '70px', null, '90px'],
         overflow: 'hidden',
         bg: 'transparent',
         marginTop: '8px',
@@ -53,7 +54,7 @@ export const navStyles = {
           lineHeight: 1,
           textTransform: 'uppercase',
           letterSpacing: '1px',
-          fontSize: [1, null, 2],
+          fontSize: [0, null, 0, null, 2],
           position: ' absolute',
         }
       }
