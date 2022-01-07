@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import * as React from "react";
-import { jsx } from "theme-ui";
-import Nav from "../Nav/nav";
-import { headerStyles } from "../../utils/headerStyles";
+import * as React from 'react';
+import { jsx } from 'theme-ui';
+import { motion } from 'framer-motion';
+import Nav from '../Nav/nav';
+import { headerStyles } from '../../utils/headerStyles';
 
 const Header = () => {
   return (
@@ -12,7 +13,10 @@ const Header = () => {
       <div
         sx={headerStyles.container}
       >
-        <div
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.4, type: 'spring', }}
           sx={headerStyles.headingBox}
         >
           <div
@@ -35,7 +39,7 @@ const Header = () => {
           >
             Developer
           </div>
-        </div>
+        </motion.div>
         <Nav />
 
       </div>
