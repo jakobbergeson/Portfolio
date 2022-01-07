@@ -33,6 +33,8 @@ const theme = {
       a: {
         display: 'block',
         cursor: 'pointer',
+        textDecoration: 'none',
+        color: 'inherit',
       },
     },
   },
