@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx } from "theme-ui";
+import Nav from "../Nav/nav";
 import { headerStyles } from "../../utils/headerStyles";
 
 const Header = () => {
@@ -34,8 +35,8 @@ const Header = () => {
           >
             Developer
           </div>
-
         </div>
+        <Nav />
 
       </div>
       <div
