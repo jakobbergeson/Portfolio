@@ -9,9 +9,7 @@ import Home from '../components/Home/home';
 const IndexPage = () => {
   return (
     <Layout>
-      <Header
-        id='#top'
-      />
+      <Header />
       <div
         sx={{
           boxSizing: 'border-box',

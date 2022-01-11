@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui';
 import * as React from 'react';
 import { Circle } from '../Animations';
+import MobileNav from './mobileNav';
 import { navStyles } from '../../utils';
 
 const Nav = () => {
@@ -43,6 +44,9 @@ const Nav = () => {
     borderRadius: '20%'
   };
 
+  const whileTap =
+    { scale: 0.95 };
+
   return (
     <>
       <nav sx={navStyles.wrapper}>
@@ -54,10 +58,12 @@ const Nav = () => {
             childVariant={childVariant}
             animate={'visible'}
             whileHover={whileHover}
+            whileTap={whileTap}
             children={['About', 'Work', 'Stacks', 'Contact']}
           />
         </div>
       </nav>
+      <MobileNav />
     </>
   );
 };

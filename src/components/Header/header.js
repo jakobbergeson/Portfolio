@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import * as React from 'react';
 import { jsx } from 'theme-ui';
-import { motion } from 'framer-motion';
 import { Line } from '../Animations';
 import Nav from '../Nav/nav';
 import { headerStyles } from '../../utils/headerStyles';

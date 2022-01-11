@@ -9,6 +9,7 @@ export const Circle = ({
   childVariant,
   animate,
   whileHover,
+  whileTap,
   children,
 }) => {
 
@@ -27,6 +28,7 @@ export const Circle = ({
               sx={sxChildStyle}
               variants={childVariant}
               whileHover={whileHover}
+              whileTap={whileTap}
             >
               <a>{child}</a>
             </motion.li>

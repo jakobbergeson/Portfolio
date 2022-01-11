@@ -1,7 +1,7 @@
 export const navStyles = {
   wrapper: {
     bg: 'transparent',
-    display: 'flex',
+    display: ['none', 'flex'],
     justifyContent: 'center',
     color: 'white',
     fontWeight: 'heading',
@@ -54,5 +54,53 @@ export const navStyles = {
         }
       }
     }
+  },
+  mobileWrapper: {
+    display: ['block', 'none'],
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+  },
+  mobileContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    width: '100vw',
+    height: '100vh',
+    bg: 'text',
+  },
+  menuToggle: {
+    padding: 0,
+    outline: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    position: 'absolute',
+    top: '18px',
+    left: '90vw',
+    transform: 'translate(-6vw, 0)',
+    borderRadius: '50%',
+    bg: 'transparent',
+  },
+  menuList: {
+    m: 0,
+    padding: '25px',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '230px',
+  },
+  menuItem: {
+    m: 0,
+    padding: 0,
+    mb: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+    textAlign: 'center',
+    color: 'primary',
+    fontSize: 5
   }
 }
