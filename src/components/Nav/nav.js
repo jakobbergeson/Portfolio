@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { motion } from 'framer-motion';
+import * as React from 'react';
+import { Circle } from '../Animations';
 import { navStyles } from '../../utils';
 
 const Nav = () => {
@@ -12,7 +13,7 @@ const Nav = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.2,
+        delay: 1.5,
         when: 'beforeChildren',
         staggerChildren: 0.25,
         mass: 0.2,
@@ -27,71 +28,37 @@ const Nav = () => {
     },
     visible: {
       y: 0,
-      opacity: 1,
+      opacity: [0, 0, 0, 0, 0, 1],
       transition: {
         type: 'spring',
-        stiffness: 90,
+        stiffness: 120,
         duration: 0.2,
       }
     }
   };
 
+  const whileHover = {
+    boxShadow: '0px 0px 8px #ffffff',
+    scale: 1.2,
+    borderRadius: '20%'
+  };
+
   return (
-    <nav sx={navStyles.wrapper}>
-      <div sx={navStyles.container}>
-        <motion.ul
-          sx={navStyles.container.list}
-          variants={containerVariant}
-          initial='hidden'
-          animate='visible'
-        >
-          <motion.li
-            sx={navStyles.container.list.circle}
-            variants={childVariant}
-            whileHover={{
-              boxShadow: '0px 0px 8px #ffffff',
-              scale: 1.2,
-              borderRadius: '20%'
-            }}
-          >
-            <a>About</a>
-          </motion.li>
-          <motion.li
-            sx={navStyles.container.list.circle}
-            whileHover={{
-              boxShadow: '0px 0px 8px #ffffff',
-              scale: 1.2,
-              borderRadius: '20%'
-            }}
-            variants={childVariant}
-          >
-            <a>Work</a>
-          </motion.li>
-          <motion.li
-            sx={navStyles.container.list.circle}
-            whileHover={{
-              boxShadow: '0px 0px 8px #ffffff',
-              scale: 1.2,
-              borderRadius: '20%'
-            }}
-            variants={childVariant}
-          >
-            <a>Stacks</a>
-          </motion.li>
-          <motion.li
-            sx={navStyles.container.list.circle}
-            whileHover={{
-              boxShadow: '0px 0px 8px #ffffff',
-              scale: 1.2,
-              borderRadius: '20%'
-            }}
-            variants={childVariant}
-          >
-            <a>Contact</a>
-          </motion.li>
-        </motion.ul>
-      </div>
-    </nav>
+    <>
+      <nav sx={navStyles.wrapper}>
+        <div sx={navStyles.container}>
+          <Circle
+            sxContainerStyle={navStyles.container.list}
+            sxChildStyle={navStyles.container.list.circle}
+            containerVariant={containerVariant}
+            childVariant={childVariant}
+            animate={'visible'}
+            whileHover={whileHover}
+            children={['About', 'Work', 'Stacks', 'Contact']}
+          />
+        </div>
+      </nav>
+    </>
   );
 };
 
