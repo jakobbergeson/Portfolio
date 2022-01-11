@@ -2,10 +2,41 @@
 import * as React from 'react';
 import { jsx } from 'theme-ui';
 import { motion } from 'framer-motion';
+import { Line } from '../Animations';
 import Nav from '../Nav/nav';
 import { headerStyles } from '../../utils/headerStyles';
 
 const Header = () => {
+
+  const containerVariant = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    }
+  };
+
+  const childVariant = {
+    hidden: {
+      x: '-20%',
+      opacity: 0
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        stiffness: 70,
+        duration: 0.2,
+      }
+    }
+  };
+
   return (
     <div
       sx={headerStyles.wrapper}
@@ -13,33 +44,14 @@ const Header = () => {
       <div
         sx={headerStyles.container}
       >
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.4, type: 'spring', }}
-          sx={headerStyles.headingBox}
-        >
-          <div
-            sx={headerStyles.heading1}
-          >
-            Full-
-            <div
-              sx={headerStyles.heading2}
-            >
-              Stack
-            </div>
-          </div>
-          <div
-            sx={headerStyles.heading2}
-          >
-            Software
-          </div>
-          <div
-            sx={headerStyles.heading2}
-          >
-            Developer
-          </div>
-        </motion.div>
+        <Line
+          sxContainerStyle={headerStyles.headingBox}
+          sxChildStyle={headerStyles.heading2}
+          containerVariant={containerVariant}
+          childVariant={childVariant}
+          animate={'visible'}
+          children={['Full - Stack', 'Software', 'Developer']}
+        />
         <Nav />
 
       </div>
