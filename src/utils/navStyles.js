@@ -95,12 +95,13 @@ export const navStyles = {
   menuItem: {
     m: 0,
     padding: 0,
-    mb: '20px',
+    mb: '40px',
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
     textAlign: 'center',
     color: 'primary',
-    fontSize: 5
+    fontSize: '40px'
   }
 }

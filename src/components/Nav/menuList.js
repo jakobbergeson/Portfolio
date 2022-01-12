@@ -25,18 +25,20 @@ const listVariants = {
 };
 
 export const MenuList = ({
-  toggle
+  toggle,
+  children
 }) => (
   <motion.ul
     sx={navStyles.menuList}
     variants={listVariants}>
-    {itemIds.map(i => (
-      <MenuItem
-        toggle={toggle}
-        i={i}
-        key={i} />
-    ))}
+    {children.map((child, i) => {
+      return (
+        <MenuItem
+          toggle={toggle}
+          key={i}
+          child={child}
+        />
+      );
+    })}
   </motion.ul>
 );
-
-const itemIds = [0, 1, 2, 3];

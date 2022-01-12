@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import * as React from "react";
-import { motion } from "framer-motion";
+import * as React from 'react';
+import { motion } from 'framer-motion';
 import { navStyles } from '../../utils';
 
 const itemVariants = {
@@ -9,19 +9,24 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 100, velocity: -100 }
+      type: 'spring',
+      y: { stiffness: 800 }
     }
   },
   closed: {
     y: 50,
     opacity: 0,
     transition: {
-      y: { stiffness: 100 }
+      type: 'spring',
+      y: { stiffness: 800 }
     }
   }
 };
 
-export const MenuItem = ({ i, toggle }) => {
+export const MenuItem = ({
+  toggle,
+  child
+}) => {
 
   return (
     <motion.li
@@ -33,7 +38,7 @@ export const MenuItem = ({ i, toggle }) => {
       <div
 
       >
-        MenuItem
+        {child}
       </div>
     </motion.li>
   );
