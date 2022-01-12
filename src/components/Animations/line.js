@@ -17,10 +17,10 @@ const Line = ({
       animate={animate}
       variants={containerVariant}
     >
-      {children.map((child, index) => {
+      {children.map((child, i) => {
         return (
           <motion.div
-            key={index}
+            key={i}
             sx={sxChildStyle}
             variants={childVariant}
           >

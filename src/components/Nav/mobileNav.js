@@ -40,7 +40,10 @@ const MobileNav = () => {
     >
       <motion.div sx={navStyles.mobileContainer} variants={sidebar} />
       <MenuToggle toggle={() => toggleOpen()} />
-      <MenuList toggle={() => toggleOpen()} />
+      <MenuList
+        toggle={() => toggleOpen()}
+        children={['About', 'Work', 'Stacks', 'Contact']}
+      />
     </motion.nav>
   );
 };

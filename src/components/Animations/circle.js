@@ -21,10 +21,10 @@ export const Circle = ({
       variants={containerVariant}
     >
       {
-        children.map((child, index) => {
+        children.map((child, i) => {
           return (
             <motion.li
-              key={index}
+              key={i}
               sx={sxChildStyle}
               variants={childVariant}
               whileHover={whileHover}
