@@ -18,6 +18,12 @@ const IndexPage = () => {
         }}
       >
         <Home />
+        <div
+          sx={{
+            height: '100vh'
+          }}>
+
+        </div>
       </div>
     </Layout>
   );
