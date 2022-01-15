@@ -24,7 +24,7 @@ const theme = {
       fontWeight: 'body',
       fontSize: 1,
       bg: 'primary',
-      letterSpacing: '.17em',
+      letterSpacing: '.1em',
       boxSizing: 'border-box',
       minWidth: 0,
       ul: {

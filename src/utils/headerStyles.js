@@ -21,7 +21,7 @@ export const headerStyles = {
     minWidth: 0,
     display: 'flex',
     position: 'relative',
-    ml: [0, null, 'auto', '80px'],
+    ml: [0, null, 'auto', '100px', null, '150px'],
     mr: [0, null, 'auto', '60px'],
     mb: '48px',
     WebkitFlex: 1,
@@ -34,6 +34,7 @@ export const headerStyles = {
   },
   headingBox: {
     boxSizing: 'border-box',
+    letterSpacing: ['.2em', null, '.005em'],
     m: 0,
     minWidth: 0
   },

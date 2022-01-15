@@ -1,7 +1,7 @@
 export const navStyles = {
   wrapper: {
     bg: 'transparent',
-    display: ['none', 'flex'],
+    display: ['none', 'none', 'flex'],
     justifyContent: 'center',
     color: 'white',
     fontWeight: 'heading',
@@ -56,7 +56,7 @@ export const navStyles = {
     }
   },
   mobileWrapper: {
-    display: ['block', 'none'],
+    display: ['block', 'block', 'none'],
     position: 'absolute',
     top: 0,
     left: 0,

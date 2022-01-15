@@ -27,8 +27,8 @@ const Layout = ({ children }) => {
     visible: {
       pathLength: 1,
       transition: {
-        delay: 4,
-        duration: 1.5,
+        delay: 3.5,
+        duration: 1.1,
         ease: 'easeInOut'
       }
     }
@@ -41,8 +41,8 @@ const Layout = ({ children }) => {
     visible: {
       pathLength: 1,
       transition: {
-        delay: 5.5,
-        duration: 1,
+        delay: 4.6,
+        duration: .7,
         ease: 'easeInOut'
       }
     }
@@ -58,8 +58,8 @@ const Layout = ({ children }) => {
           <motion.svg
             version='1.0' xmlns='http://www.w3.org/2000/svg'
             sx={{
-              width: ['55px', '60px'],
-              height: ['55px', '60px']
+              width: ['55px', null, '60px', '75px'],
+              height: ['55px', null, '60px', '75px']
 
             }}
             viewBox='0 0 55.000000 55.000000'
@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
             <motion.g
               transform='translate(0.000000,55.000000) scale(0.005309,-0.005723)'
               stroke='#f6f6f6'
-              stroke-width='120'
+              strokeWidth='120'
             >
               <motion.path
                 variants={svgBracerVariants}
