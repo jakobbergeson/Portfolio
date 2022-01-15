@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import * as React from 'react';
-import { Circle } from '../Animations';
+import { NavList } from '../Animations';
 import MobileNav from './mobileNav';
 import { navStyles } from '../../utils';
 
@@ -51,7 +51,7 @@ const Nav = () => {
     <>
       <nav sx={navStyles.wrapper}>
         <div sx={navStyles.container}>
-          <Circle
+          <NavList
             sxContainerStyle={navStyles.container.list}
             sxChildStyle={navStyles.container.list.circle}
             containerVariant={containerVariant}
