@@ -10,6 +10,7 @@ const Box = ({
   whileInView = 'visible',
   viewport = 'default',
   children,
+  ...props
 }) => {
 
   const defaultVariants = {
@@ -51,6 +52,7 @@ const Box = ({
             ? defaultVariants
             : childVariant
         }
+        {...props}
       >
         {children}
       </motion.div>

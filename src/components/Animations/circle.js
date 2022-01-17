@@ -6,42 +6,42 @@ const Circle = ({
   sxCircleStyle,
   sxCircleChildStyle,
   variants = 'default',
+  initial = 'hidden',
   animate,
   children,
   ...props
 }) => {
 
-  const controls = useAnimation();
-
-  console.log("CONTROLS", animate);
-
   const defaultVariants = {
     hidden: {
       scale: 1,
       borderRadius: '50%',
-      transition: { duration: 0.2 }
+      transition: {
+        duration: 0.1
+      }
     },
     visible: {
-      boxShadow: '0px 0px 8px #ffffff',
+      boxShadow: '0px 0px 8px #48cae4',
+      backgroundColor: '#48cae4',
       scale: 1.2,
       borderRadius: '20%',
-      transition: { duration: 0.2 }
+      transition: {
+        duration: 0.1,
+        type: 'spring',
+        stiffness: 120,
+        ease: 'easeInOut'
+      }
     }
   };
 
-  // controls.start({
-  //   hidden: {
-  //     boxShadow: 'none',
-  //     transition: { duration: 0.3 }
-  //   },
-  //   visible: {
-  //     boxShadow: '0px 0px 8px #ffffff',
-  //     scale: 1.2,
-  //     borderRadius: '20%',
-  //     transition: { duration: 0.3 }
-  //   }
-
-  // });
+  const defaultChildVariants = {
+    hidden: {
+      fill: '#48cae4',
+    },
+    visible: {
+      fill: '#f6f6f6',
+    }
+  };
 
   const whileTap = { scale: 0.95 };
 
@@ -49,10 +49,8 @@ const Circle = ({
   return (
     <motion.div
       sx={sxCircleStyle}
-      onHoverStart={() => controls.start('visible')}
-      onHoverEnd={() => controls.start('hidden')}
-      animate={controls}
-      initial={'hidden'}
+      animate={animate}
+      initial={initial}
       whileTap={whileTap}
       variants={
         variants === 'default'
@@ -63,6 +61,11 @@ const Circle = ({
     >
       <motion.div
         sx={sxCircleChildStyle}
+        variants={
+          variants === 'default'
+            ? defaultChildVariants
+            : variants
+        }
       >
         {children}
       </motion.div>

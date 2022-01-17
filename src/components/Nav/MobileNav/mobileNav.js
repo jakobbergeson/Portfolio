@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { MenuList } from "./menuList";
-import { navStyles } from '../../utils';
+import { navStyles } from '../../../utils';
 
 const sidebar = {
   open: (height = 800) => ({

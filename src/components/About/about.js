@@ -4,9 +4,8 @@ import { jsx, Avatar } from 'theme-ui';
 import { motion } from 'framer-motion';
 import { Box } from '../Animations/';
 import { CtaButton } from '../CtaButton';
-import { Circle } from '../Animations/';
 import JakobAvatar from '../../images/Avatar.svg';
-import LinkedIn from '../../images/linkedin-brands.svg';
+import LinkedIn from '../../images/linkedin-brands.js';
 import { aboutStyles } from '../../utils/';
 
 const About = () => {
@@ -31,9 +30,9 @@ const About = () => {
           sxContainerStyle={aboutStyles.ctaButton}
           sxChildStyle={aboutStyles.circle}
           sxBlurbStyle={aboutStyles.ctaBlurb}
-          sxImageStyle={aboutStyles.circleImage}
+          sxImageStyle={aboutStyles.circleImageBox}
           blurb={'Go To LinkedIn'}
-          src={LinkedIn}
+          image={<LinkedIn />}
         />
       </div>
       <Avatar

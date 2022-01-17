@@ -2,7 +2,8 @@
 import * as React from 'react';
 import { jsx } from 'theme-ui';
 import { Line } from '../Animations';
-import Nav from '../Nav/nav';
+import { Nav } from '../Nav/';
+import { MobileNav } from '../Nav/';
 import { headerStyles } from '../../utils/headerStyles';
 
 const Header = () => {
@@ -52,7 +53,7 @@ const Header = () => {
           children={['Full - Stack', 'Software', 'Developer']}
         />
         <Nav />
-
+        <MobileNav />
       </div>
       <div
         sx={headerStyles.anglBox1}
