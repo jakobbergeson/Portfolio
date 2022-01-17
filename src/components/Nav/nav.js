@@ -2,7 +2,6 @@
 import { jsx } from 'theme-ui';
 import * as React from 'react';
 import { NavList } from '../Animations';
-import MobileNav from './mobileNav';
 import { navStyles } from '../../utils';
 
 const Nav = () => {
@@ -63,7 +62,6 @@ const Nav = () => {
           />
         </div>
       </nav>
-      <MobileNav />
     </>
   );
 };

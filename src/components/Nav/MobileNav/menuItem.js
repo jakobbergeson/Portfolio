@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui';
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { navStyles } from '../../utils';
+import { navStyles } from '../../../utils';
 
 const itemVariants = {
   open: {

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Avatar } from 'theme-ui';
-import { motion, useAnimation } from 'framer-motion';
+import { useState } from 'react';
 import { Box } from '../Animations/';
 import { Circle } from '../Animations/';
 
@@ -10,17 +10,17 @@ const CtaButton = ({
   sxBlurbStyle,
   sxImageStyle,
   blurb,
-  src,
+  image,
 }) => {
 
-  const controls = useAnimation();
+  const [hoverState, setHoverState] = useState('hidden');
 
   return (
     <Box
       sxContainerStyle={sxContainerStyle}
       sxChildStyle={sxContainerStyle}
-      onHoverStart={() => controls.start('visible')}
-      onHoverEnd={() => controls.start('hidden')}
+      onHoverStart={() => setHoverState('visible')}
+      onHoverEnd={() => setHoverState('hidden')}
     >
       <div
         sx={sxBlurbStyle}
@@ -29,12 +29,10 @@ const CtaButton = ({
       </div>
       <Circle
         sxCircleStyle={sxChildStyle}
-        animate={controls}
+        sxCircleChildStyle={sxImageStyle}
+        animate={hoverState}
+        children={image}
       >
-        <Avatar
-          src={src}
-          sx={sxImageStyle}
-        />
       </Circle>
     </Box>
   );

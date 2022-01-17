@@ -83,10 +83,8 @@ export const aboutStyles = {
     bg: 'transparent',
     borderColor: 'blue',
   },
-  circleImage: {
-    bg: 'primary',
-    backgroundSize: '40%',
-    width: '35px',
-    height: '35px',
+  circleImageBox: {
+    height: '30px',
+    width: 'fit-content'
   }
 };
