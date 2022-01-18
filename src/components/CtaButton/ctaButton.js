@@ -15,12 +15,18 @@ const CtaButton = ({
 
   const [hoverState, setHoverState] = useState('hidden');
 
+  const ctaViewport = {
+    once: true,
+    amount: .7
+  };
+
   return (
     <Box
       sxContainerStyle={sxContainerStyle}
       sxChildStyle={sxContainerStyle}
       onHoverStart={() => setHoverState('visible')}
       onHoverEnd={() => setHoverState('hidden')}
+      viewport={ctaViewport}
     >
       <div
         sx={sxBlurbStyle}

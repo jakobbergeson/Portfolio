@@ -17,7 +17,7 @@ const Circle = ({
       scale: 1,
       borderRadius: '50%',
       transition: {
-        duration: 0.1
+        duration: 0.2
       }
     },
     visible: {
@@ -26,7 +26,8 @@ const Circle = ({
       scale: 1.2,
       borderRadius: '20%',
       transition: {
-        duration: 0.1,
+        duration: 0.2,
+        mass: .4,
         type: 'spring',
         stiffness: 120,
         ease: 'easeInOut'

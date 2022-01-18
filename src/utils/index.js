@@ -3,6 +3,7 @@ import { headerStyles } from "./headerStyles";
 import { homeStyles } from "./homeStyles";
 import { layoutStyles } from "./layoutStyles";
 import { aboutStyles } from "./aboutStyles";
+import { headingStyles } from "./headingStyles";
 
 export {
   navStyles,
@@ -10,4 +11,5 @@ export {
   homeStyles,
   layoutStyles,
   aboutStyles,
+  headingStyles,
 };

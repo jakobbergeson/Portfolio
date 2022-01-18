@@ -101,6 +101,8 @@ const Layout = ({ children }) => {
           </motion.svg>
         </motion.a>
         <main>{children}</main>
+
+
       </article>
     </>
   );
