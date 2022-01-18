@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import * as React from 'react';
 import { jsx, Avatar } from 'theme-ui';
-import { motion } from 'framer-motion';
 import { Box } from '../Animations/';
 import { CtaButton } from '../CtaButton';
+import { Heading } from '../Heading/';
 import JakobAvatar from '../../images/Avatar.svg';
 import LinkedIn from '../../images/linkedin-brands.js';
 import { aboutStyles } from '../../utils/';
@@ -17,9 +17,7 @@ const About = () => {
       <div
         sx={aboutStyles.column}
       >
-        <Box
-          sxContainerStyle={aboutStyles.heading}
-          sxChildStyle={aboutStyles.header}
+        <Heading
           children={'ABOUT ME'}
         />
         <Box

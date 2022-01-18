@@ -31,7 +31,7 @@ const Box = ({
 
   const defaultViewport = {
     once: true,
-    amount: .6
+    amount: .5
   };
 
   return (
