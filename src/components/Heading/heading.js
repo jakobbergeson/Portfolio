@@ -16,7 +16,7 @@ const Heading = ({
 
   const leftBraceVariant = {
     hidden: {
-      x: '-33%',
+      x: '-13%',
       y: -10,
       opacity: 0,
     },
@@ -27,15 +27,15 @@ const Heading = ({
       transition: {
         delay: .3,
         type: "spring",
-        bounce: 0.3,
-        duration: 0.5
+        bounce: 0.5,
+        duration: 0.6
       }
     }
   };
 
   const rightBraceVariant = {
     hidden: {
-      x: '33%',
+      x: '13%',
       y: -10,
       opacity: 0
     },
@@ -46,8 +46,8 @@ const Heading = ({
       transition: {
         delay: .3,
         type: "spring",
-        bounce: 0.3,
-        duration: 0.5
+        bounce: 0.5,
+        duration: 0.6
       }
     }
   };
@@ -64,18 +64,11 @@ const Heading = ({
         display: 'flex',
         justifyContent: 'center'
       }}
-    // initial={initial}
-    // whileInView={whileInView}
-    // viewport={
-    //   viewport === 'default'
-    //     ? defaultViewport
-    //     : viewport
-    // }
     >
       <motion.img
         src={LeftBrace}
         sx={{
-          height: ['55px', '75px'],
+          height: ['55px', null, null, '75px'],
           width: '75px',
           borderRadius: 0,
         }}
@@ -97,7 +90,7 @@ const Heading = ({
       <motion.img
         src={RightBrace}
         sx={{
-          height: ['55px', '75px'],
+          height: ['55px', null, null, '75px'],
           width: '75px',
           borderRadius: 0,
         }}
