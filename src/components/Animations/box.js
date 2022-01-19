@@ -9,6 +9,7 @@ const Box = ({
   initial = 'hidden',
   whileInView = 'visible',
   viewport = 'default',
+  delay,
   children,
   ...props
 }) => {
@@ -23,6 +24,7 @@ const Box = ({
       opacity: 1,
       transition: {
         type: "spring",
+        delay,
         bounce: 0.4,
         duration: 0.4
       }

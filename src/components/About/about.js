@@ -4,6 +4,7 @@ import { jsx, Avatar } from 'theme-ui';
 import { Box } from '../Animations/';
 import { CtaButton } from '../CtaButton';
 import { Heading } from '../Heading/';
+import ParallaxAvatar from './avatar';
 import JakobAvatar from '../../images/Avatar.svg';
 import LinkedIn from '../../images/linkedin-brands.js';
 import { aboutStyles } from '../../utils/';
@@ -33,11 +34,12 @@ const About = () => {
           image={<LinkedIn />}
         />
       </div>
-      <Avatar
+      <ParallaxAvatar />
+      {/* <Avatar
         src={JakobAvatar}
         alt={'Jakob Avatar'}
         sx={{ width: '280px', height: '280px' }}
-      />
+      /> */}
     </div>
   );
 };

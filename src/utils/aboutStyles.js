@@ -25,7 +25,7 @@ export const aboutStyles = {
   paragraph: {
     m: 0,
     minWidth: 0,
-    fontFamily: '"Open Sans"',
+    fontFamily: "'Roboto', sans-serif",
     lineHeight: 1.5,
     fontWeight: 300,
     color: 'text',

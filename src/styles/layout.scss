@@ -1,8 +1,14 @@
+@font-face {
+  font-family: "Averta";
+  src: url("../fonts/AvertaDemoPE-Regular.woff2");
+}
+
 html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   margin: 0px;
+  font-family: "Averta";
 }
 
 article {
