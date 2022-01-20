@@ -111,28 +111,33 @@ const Avatar = () => {
           childVariant={childVariant1}
           sxContainerStyle={{
             position: 'absolute',
-            top: '100px',
-            left: '-50px',
+            top: '68px',
+            left: '-57px',
             width: '320px',
-            height: '2px',
+            height: '30px',
             bg: 'transparent',
             overflow: 'hidden',
             transform: 'rotate(-30deg)',
           }}
           sxChildStyle={{
             position: 'absolute',
-            bg: 'black',
+            bg: 'transparent',
             width: '100%',
             height: '100%',
+            textDecoration: 'underline wavy black',
+            color: 'transparent',
+            fontSize: '19px',
+
           }}
-          delay={'3'}
-        />
+        >
+          aaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </Box>
         <Box
           childVariant={childVariant2}
           sxContainerStyle={{
             position: 'absolute',
             top: '108px',
-            left: '-20px',
+            left: '-35px',
             width: '320px',
             height: '2px',
             bg: 'transparent',
@@ -150,21 +155,26 @@ const Avatar = () => {
           childVariant={childVariant1}
           sxContainerStyle={{
             position: 'absolute',
-            top: '140px',
-            left: '-20px',
+            top: '114px',
+            left: '-35px',
             width: '300px',
-            height: '2px',
+            height: '30px',
             bg: 'transparent',
             overflow: 'hidden',
             transform: 'rotate(-30deg)',
           }}
           sxChildStyle={{
             position: 'absolute',
-            bg: 'black',
+            bg: 'transparent',
             width: '100%',
             height: '100%',
+            textDecoration: 'underline wavy black',
+            color: 'transparent',
+            fontSize: '19px',
           }}
-        />
+        >
+          aaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </Box>
       </motion.div>
       <motion.div
         sx={{
