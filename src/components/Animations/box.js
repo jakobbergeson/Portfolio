@@ -9,6 +9,7 @@ const Box = ({
   initial = 'hidden',
   whileInView = 'visible',
   viewport = 'default',
+  amount = 1,
   delay,
   children,
   ...props
@@ -33,7 +34,7 @@ const Box = ({
 
   const defaultViewport = {
     once: true,
-    amount: .5
+    amount,
   };
 
   return (

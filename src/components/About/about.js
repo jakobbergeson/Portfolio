@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import * as React from 'react';
-import { jsx, Avatar } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { Box } from '../Animations/';
 import { CtaButton } from '../CtaButton';
 import { Heading } from '../Heading/';
-import ParallaxAvatar from './avatar';
-import JakobAvatar from '../../images/Avatar.svg';
+import Avatar from './avatar';
 import LinkedIn from '../../images/linkedin-brands.js';
 import { aboutStyles } from '../../utils/';
 
@@ -23,23 +22,15 @@ const About = () => {
         />
         <Box
           sxChildStyle={aboutStyles.paragraph}
+          amount={.25}
           children={'Amet sint dolore amet non ipsum. Laborum anim tempor velit Lorem quis quis est. Eu sunt est deserunt consequat proident magna quis voluptate culpa exercitation id. Id adipisicing consectetur tempor occaecat consectetur deserunt sunt. Exercitation labore nisi ea incididunt aliqua aliquip Lorem laboris.'}
         />
         <CtaButton
-          sxContainerStyle={aboutStyles.ctaButton}
-          sxChildStyle={aboutStyles.circle}
-          sxBlurbStyle={aboutStyles.ctaBlurb}
-          sxImageStyle={aboutStyles.circleImageBox}
           blurb={'Go To LinkedIn'}
           image={<LinkedIn />}
         />
       </div>
-      <ParallaxAvatar />
-      {/* <Avatar
-        src={JakobAvatar}
-        alt={'Jakob Avatar'}
-        sx={{ width: '280px', height: '280px' }}
-      /> */}
+      <Avatar />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { jsx, Avatar } from 'theme-ui';
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Box } from '../Animations/';
-import LeftBrace from '../../images/Left_Bracer.svg';
+import LeftBrace from '../../images/Left_Bracer_sm.svg';
 import RightBrace from '../../images/Right_Bracer_sm.svg';
 import { headingStyles } from '../../utils';
 
@@ -11,50 +11,51 @@ const Heading = ({
   initial = 'hidden',
   viewport = 'default',
   whileInView = 'visible',
-  children
+  children,
+  styles
 }) => {
 
   const leftBraceVariant = {
     hidden: {
-      x: '-13%',
+      x: '-105%',
       y: -10,
       opacity: 0,
     },
     visible: {
-      x: 50,
+      x: 0,
       y: -10,
       opacity: 1,
       transition: {
         delay: .3,
         type: "spring",
-        bounce: 0.5,
-        duration: 0.6
+        bounce: 0.6,
+        duration: 0.3
       }
     }
   };
 
   const rightBraceVariant = {
     hidden: {
-      x: '13%',
+      x: '105%',
       y: -10,
       opacity: 0
     },
     visible: {
-      x: -50,
+      x: 0,
       y: -10,
       opacity: 1,
       transition: {
         delay: .3,
         type: "spring",
-        bounce: 0.5,
-        duration: 0.6
+        bounce: 0.6,
+        duration: 0.3
       }
     }
   };
 
   const defaultViewport = {
     once: true,
-    amount: .6
+    amount: 1
   };
 
   return (
@@ -62,16 +63,11 @@ const Heading = ({
       sx={{
         maxWidth: 'max-content',
         display: 'flex',
-        justifyContent: 'center'
       }}
     >
       <motion.img
         src={LeftBrace}
-        sx={{
-          height: ['55px', null, null, '75px'],
-          width: '75px',
-          borderRadius: 0,
-        }}
+        sx={headingStyles.brace}
         variants={leftBraceVariant}
         initial={initial}
         whileInView={whileInView}
@@ -89,11 +85,7 @@ const Heading = ({
       </Box>
       <motion.img
         src={RightBrace}
-        sx={{
-          height: ['55px', null, null, '75px'],
-          width: '75px',
-          borderRadius: 0,
-        }}
+        sx={headingStyles.brace}
         variants={rightBraceVariant}
         initial={initial}
         whileInView={whileInView}
