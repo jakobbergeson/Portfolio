@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import { jsx, Avatar } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { Box } from '../Animations/';
 import { Circle } from '../Animations/';
+import { ctaStyles } from '../../utils';
 
 const CtaButton = ({
   sxContainerStyle,
@@ -22,20 +23,20 @@ const CtaButton = ({
 
   return (
     <Box
-      sxContainerStyle={sxContainerStyle}
-      sxChildStyle={sxContainerStyle}
+      sxContainerStyle={sxContainerStyle || ctaStyles.ctaButton}
+      sxChildStyle={sxContainerStyle || ctaStyles.ctaButton}
       onHoverStart={() => setHoverState('visible')}
       onHoverEnd={() => setHoverState('hidden')}
       viewport={ctaViewport}
     >
       <div
-        sx={sxBlurbStyle}
+        sx={sxBlurbStyle || ctaStyles.ctaBlurb}
       >
         {blurb}
       </div>
       <Circle
-        sxCircleStyle={sxChildStyle}
-        sxCircleChildStyle={sxImageStyle}
+        sxCircleStyle={sxChildStyle || ctaStyles.circle}
+        sxCircleChildStyle={sxImageStyle || ctaStyles.circleImageBox}
         animate={hoverState}
         children={image}
       >

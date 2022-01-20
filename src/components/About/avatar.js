@@ -6,7 +6,7 @@ import JakobAvatar from '../../images/Avatar.png';
 import Geometry from '../../images/geometry_clear.png';
 
 
-const ParallaxAvatar = () => {
+const Avatar = () => {
 
   const elementTop = 620;
 
@@ -66,7 +66,7 @@ const ParallaxAvatar = () => {
         maxHeight: '240px',
         width: '240px',
         height: '240px',
-        mb: [6, null, null, 0],
+        mb: ['100px', null, null, 0],
       }}
     >
       <motion.div
@@ -92,7 +92,7 @@ const ParallaxAvatar = () => {
           sx={{
             width: '100%',
             objectFit: 'contain',
-            height: 'auto',
+            height: '220px',
           }}
         />
       </motion.div>
@@ -113,7 +113,7 @@ const ParallaxAvatar = () => {
             position: 'absolute',
             top: '100px',
             left: '-50px',
-            width: '300px',
+            width: '320px',
             height: '2px',
             bg: 'transparent',
             overflow: 'hidden',
@@ -133,7 +133,7 @@ const ParallaxAvatar = () => {
             position: 'absolute',
             top: '108px',
             left: '-20px',
-            width: '300px',
+            width: '320px',
             height: '2px',
             bg: 'transparent',
             overflow: 'hidden',
@@ -152,7 +152,7 @@ const ParallaxAvatar = () => {
             position: 'absolute',
             top: '140px',
             left: '-20px',
-            width: '280px',
+            width: '300px',
             height: '2px',
             bg: 'transparent',
             overflow: 'hidden',
@@ -199,4 +199,4 @@ const ParallaxAvatar = () => {
   );
 };
 
-export default ParallaxAvatar;
+export default Avatar;

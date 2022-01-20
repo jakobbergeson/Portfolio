@@ -14,7 +14,8 @@ export const homeStyles = {
     msFlexAlign: 'center',
     alignItems: 'center',
     bg: 'primary',
-    paddingTop: ['32px', null, '132px'],
+    paddingTop: ['32px', null, null, '160px'],
+    px: 2,
     paddingBottom: ['80px', '193px'],
   }
 }
