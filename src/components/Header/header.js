@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import * as React from 'react';
+import { useRef } from 'react';
 import { jsx } from 'theme-ui';
 import { Line } from '../Animations';
 import { Nav } from '../Nav/';

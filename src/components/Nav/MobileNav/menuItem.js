@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import * as React from 'react';
+import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import { navStyles } from '../../../utils';
 
@@ -25,7 +26,8 @@ const itemVariants = {
 
 export const MenuItem = ({
   toggle,
-  child
+  to,
+  text
 }) => {
 
   return (
@@ -35,11 +37,11 @@ export const MenuItem = ({
       whileTap={{ scale: 0.95 }}
       onClick={toggle}
     >
-      <div
-
+      <Link
+        to={to}
       >
-        {child}
-      </div>
+        {text}
+      </Link>
     </motion.li>
   );
 };

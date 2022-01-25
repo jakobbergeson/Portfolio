@@ -10,6 +10,7 @@ const Line = ({
   animate,
   children,
 }) => {
+
   return (
     <motion.div
       sx={sxContainerStyle}

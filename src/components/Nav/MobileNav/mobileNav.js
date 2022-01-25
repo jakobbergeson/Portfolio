@@ -26,6 +26,13 @@ const sidebar = {
   }
 };
 
+const navItems = [
+  { text: 'About', to: '/#about' },
+  { text: 'Work', to: '/#projects' },
+  { text: 'Stacks', to: '/#stacks' },
+  { text: 'Contact', to: '/#contact' }
+];
+
 const MobileNav = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
@@ -42,7 +49,7 @@ const MobileNav = () => {
       <MenuToggle toggle={() => toggleOpen()} />
       <MenuList
         toggle={() => toggleOpen()}
-        children={['About', 'Work', 'Stacks', 'Contact']}
+        children={navItems}
       />
     </motion.nav>
   );

@@ -5,7 +5,7 @@ import { fontSizes } from "./fontSizes";
 import { fontWeights } from "./fontWeights";
 import { lineHeights } from "./lineHeights";
 import { colors } from "./colors";
-import { flex } from "./flex";
+import { text } from "./text";
 
 const theme = {
   space,
@@ -15,7 +15,7 @@ const theme = {
   fontWeights,
   lineHeights,
   colors,
-  flex,
+  text,
 
   styles: {
     root: {
@@ -27,6 +27,7 @@ const theme = {
       letterSpacing: '.1em',
       boxSizing: 'border-box',
       minWidth: 0,
+      scrollBehavior: 'smooth',
       ul: {
         listStyle: 'none',
       },

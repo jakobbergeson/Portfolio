@@ -15,8 +15,6 @@ export const aboutStyles = {
   column: {
     m: 0,
     minWidth: 0,
-    display: 'flex',
-    flexDirection: 'column',
     alignItems: 'start',
     position: 'relative',
     maxWidth: '600px',

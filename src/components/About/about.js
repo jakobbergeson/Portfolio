@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import * as React from 'react';
 import { jsx } from 'theme-ui';
+import { Col } from '../Components';
 import { Box } from '../Animations/';
 import { CtaButton } from '../CtaButton';
 import { Heading } from '../Heading/';
@@ -13,8 +13,9 @@ const About = () => {
   return (
     <div
       sx={aboutStyles.wrapper}
+      id="about"
     >
-      <div
+      <Col
         sx={aboutStyles.column}
       >
         <Heading
@@ -29,7 +30,7 @@ const About = () => {
           blurb={'Go To LinkedIn'}
           image={<LinkedIn />}
         />
-      </div>
+      </Col>
       <Avatar />
     </div>
   );
