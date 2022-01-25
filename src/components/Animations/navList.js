@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
+import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 
 export const NavList = ({
@@ -13,6 +14,7 @@ export const NavList = ({
   children,
 }) => {
 
+
   return (
     <motion.ul
       sx={sxContainerStyle}
@@ -22,6 +24,7 @@ export const NavList = ({
     >
       {
         children.map((child, i) => {
+
           return (
             <motion.li
               key={i}
@@ -29,8 +32,12 @@ export const NavList = ({
               variants={childVariant}
               whileHover={whileHover}
               whileTap={whileTap}
+
             >
-              <a>{child}</a>
+              <Link
+                to={child.to}
+              >{child.text}
+              </Link>
             </motion.li>
           );
         })

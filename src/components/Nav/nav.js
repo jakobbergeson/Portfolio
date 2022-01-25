@@ -46,6 +46,13 @@ const Nav = () => {
   const whileTap =
     { scale: 0.95 };
 
+  const navItems = [
+    { text: 'About', to: '/#about' },
+    { text: 'Work', to: '/#projects' },
+    { text: 'Stacks', to: '/#stacks' },
+    { text: 'Contact', to: '/#contact' }
+  ];
+
   return (
     <>
       <nav sx={navStyles.wrapper}>
@@ -58,7 +65,7 @@ const Nav = () => {
             animate={'visible'}
             whileHover={whileHover}
             whileTap={whileTap}
-            children={['About', 'Work', 'Stacks', 'Contact']}
+            children={navItems}
           />
         </div>
       </nav>

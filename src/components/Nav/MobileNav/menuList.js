@@ -36,7 +36,8 @@ export const MenuList = ({
         <MenuItem
           toggle={toggle}
           key={i}
-          child={child}
+          to={child.to}
+          text={child.text}
         />
       );
     })}
