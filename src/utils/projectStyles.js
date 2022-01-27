@@ -6,11 +6,10 @@ export const projectStyles = {
     mb: [5, '80px', '144px'],
   },
   box: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
+    position: 'relative',
+    display: 'grid',
+    gridTemplateColumns: ['1fr', null, null, null, null, '1fr 1fr'],
     width: '100%',
     maxWidth: '1200px',
-    position: 'relative',
   }
 }

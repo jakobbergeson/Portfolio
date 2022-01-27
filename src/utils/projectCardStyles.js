@@ -1,9 +1,9 @@
 export const projectCardStyles = {
   container: {
-    display: ' flex',
+    display: 'flex',
     flexDirection: 'column',
-    width: '500px',
     maxWidth: '100vw',
+    width: '500px',
     minWidth: 0,
     mt: '24px',
     mb: ' 24px',

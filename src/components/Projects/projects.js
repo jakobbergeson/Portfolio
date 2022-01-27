@@ -2,8 +2,9 @@
 import { jsx } from 'theme-ui';
 import { Col } from '../Components';
 import { Heading } from '../Heading/';
-import { Box } from '../Animations';
+import { CtaButton } from '../CtaButton/';
 import ProjectCard from './projectCard';
+import GitHub from '../../images/github-brands.js';
 import { projectStyles } from '../../utils';
 
 
@@ -21,8 +22,13 @@ const Projects = () => {
 
       >
         <ProjectCard />
-
+        <ProjectCard />
+        <ProjectCard />
       </div>
+      <CtaButton
+        blurb={'Go To GitHub'}
+        image={<GitHub />}
+      />
     </Col>
   );
 

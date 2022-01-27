@@ -18,7 +18,7 @@ const CtaButton = ({
 
   const ctaViewport = {
     once: true,
-    amount: .7
+    amount: 1
   };
 
   return (
