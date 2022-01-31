@@ -8,7 +8,7 @@ import GitHub from '../../images/github-brands.js';
 import { projectStyles } from '../../utils';
 
 
-const Projects = () => {
+const Projects = ({ content }) => {
   return (
     <Col
       id="projects"
@@ -21,9 +21,21 @@ const Projects = () => {
         sx={projectStyles.box}
 
       >
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {content.edges.map(({ node }) => {
+          return (
+            <ProjectCard
+              key={node.id}
+              header={node.header}
+              subHeader={node.subHeader}
+              devDate={node.devDate}
+              description={node.description}
+              tools={node.tools}
+              siteUrl={node.siteUrl}
+              repoUrl={node.repoUrl}
+              sitePic={node.sitePic.file.url}
+            />
+          );
+        })}
       </div>
       <CtaButton
         blurb={'Go To GitHub'}

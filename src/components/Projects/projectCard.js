@@ -7,8 +7,16 @@ import BadgeItem from './badgeItem';
 import { projectCardStyles } from '../../utils';
 import TrulyYours from '../../images/Truly_Yours.png';
 
-const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
-
+const ProjectCard = ({
+  header,
+  subHeader,
+  devDate,
+  description,
+  tools,
+  siteUrl,
+  repoUrl,
+  sitePic,
+  delayPerPixel = 0.0008 }) => {
 
   const [hoverState, setHoverState] = useState('hidden');
 
@@ -73,7 +81,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
             fontSize: ['24px', null, null, '28px']
           }}
         >
-          Truly Yours
+          {header}
         </Text>
         <Text
           variant='text.h4'
@@ -87,7 +95,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
             fontSize: ['18px', '20px']
           }}
         >
-          Brand Platform
+          {subHeader}
         </Text>
         <div
           sx={{
@@ -100,7 +108,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
             fontFamily: "'Roboto', sans-serif",
           }}
         >
-          Developed: December 2021
+          {devDate}
         </div>
       </Box>
 
@@ -133,7 +141,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
         }}
       >
         <Image
-          src={TrulyYours}
+          src={sitePic}
           sx={{
             width: '100%',
             height: 'auto',
@@ -172,7 +180,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
               fontFamily: "'Roboto', sans-serif",
             }}
           >
-            Aute laborum nostrud mollit reprehenderit fugiat id incididunt voluptate. Sint voluptate elit ipsum dolor nisi consequat proident dolor mollit elit proident elit excepteur ad. Ullamco eiusmod sint aliqua adipisicing Lorem magna proident mollit magna.
+            {description}
           </motion.p>
           <motion.div
             initial="hidden"
@@ -184,7 +192,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
               flexWrap: 'wrap'
             }}
           >
-            {badges.map((badge, i) => {
+            {badges.map((tool, i) => {
               return (
                 <BadgeItem
                   key={i}
@@ -193,11 +201,10 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
                   originOffset={originOffset}
                   animate={hoverState}
                 >
-                  {badge}
+                  {tool}
                 </BadgeItem>
               );
-            })
-            }
+            })}
           </motion.div>
         </div>
       </Box>
@@ -211,7 +218,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
         }}
       >
         <Link
-          href={'https://trusting-wright-b79dc8.netlify.app'}
+          href={siteUrl}
           sx={{
             color: 'blue',
             fontSize: '16px',
@@ -222,7 +229,7 @@ const ProjectCard = ({ delayPerPixel = 0.0008 }) => {
           View Site
         </Link>
         <Link
-          href={'https://github.com/jakobbergeson'}
+          href={repoUrl}
           sx={{
             color: 'blue',
             fontSize: '16px',

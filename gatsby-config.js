@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
@@ -9,17 +13,13 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       `Merriweather+Sans\:300,400,500,600,700,800`,
-    //       `Open+Sans\:300,400,500,600,700,800`,
-    //       `Gudea\:400`,
-    //     ],
-    //     display: 'swap'
-    //   }
-    // },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -36,5 +36,16 @@ module.exports = {
       },
       __key: 'images',
     },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `Merriweather+Sans\:300,400,500,600,700,800`,
+    //       `Open+Sans\:300,400,500,600,700,800`,
+    //       `Gudea\:400`,
+    //     ],
+    //     display: 'swap'
+    //   }
+    // },
   ],
 };

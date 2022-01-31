@@ -27,6 +27,7 @@ const theme = {
       letterSpacing: '.1em',
       boxSizing: 'border-box',
       minWidth: 0,
+      m: 0,
       scrollBehavior: 'smooth',
       ul: {
         listStyle: 'none',
