@@ -5,13 +5,18 @@ import { About } from "../About/";
 import { Projects } from "../Projects/";
 import { homeStyles } from "../../utils";
 
-const Home = () => {
+const Home = ({ content }) => {
   return (
     <div
       sx={homeStyles.wrapper}
     >
-      <About />
-      <Projects />
+      <About
+        content={content.about}
+
+      />
+      <Projects
+        content={content.projects}
+      />
     </div>
   );
 };

@@ -8,7 +8,7 @@ import Avatar from './avatar';
 import LinkedIn from '../../images/linkedin-brands.js';
 import { aboutStyles } from '../../utils/';
 
-const About = () => {
+const About = ({ content }) => {
 
   return (
     <div
@@ -24,7 +24,7 @@ const About = () => {
         <Box
           sxChildStyle={aboutStyles.paragraph}
           amount={.25}
-          children={'Amet sint dolore amet non ipsum. Laborum anim tempor velit Lorem quis quis est. Eu sunt est deserunt consequat proident magna quis voluptate culpa exercitation id. Id adipisicing consectetur tempor occaecat consectetur deserunt sunt. Exercitation labore nisi ea incididunt aliqua aliquip Lorem laboris.'}
+          children={content.text.text}
         />
         <CtaButton
           blurb={'Go To LinkedIn'}
