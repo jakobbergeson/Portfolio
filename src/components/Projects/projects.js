@@ -21,9 +21,10 @@ const Projects = ({ content }) => {
         sx={projectStyles.box}
 
       >
-        {content.edges.map(({ node }) => {
+        {content.edges.map(({ node }, i) => {
           return (
             <ProjectCard
+              i={i}
               key={node.id}
               header={node.header}
               subHeader={node.subHeader}

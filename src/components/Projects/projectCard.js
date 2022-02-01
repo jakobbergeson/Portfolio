@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { Box } from '../Animations';
 import BadgeItem from './badgeItem';
 import { projectCardStyles } from '../../utils';
-import TrulyYours from '../../images/Truly_Yours.png';
 
 const ProjectCard = ({
+  i,
   header,
   subHeader,
   devDate,
@@ -41,7 +41,7 @@ const ProjectCard = ({
 
   const linkVariants = {
     hidden: {
-      x: -50,
+      x: i % 2 === 0 ? -50 : 50,
       opacity: 0
     },
     visible: {
@@ -56,8 +56,6 @@ const ProjectCard = ({
     }
   };
 
-  const badges = ['React', 'Gatsby', 'GraphQl', 'ThemeUI', 'Contentful', 'Shopify'];
-
   return (
     <div
       sx={projectCardStyles.container}
@@ -67,7 +65,8 @@ const ProjectCard = ({
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          pl: [3, 0]
+          pl: [3, 0],
+          textAlign: ['left', i % 2 === 0 ? 'left' : 'right']
         }}
       >
         <Text
@@ -130,8 +129,10 @@ const ProjectCard = ({
         sxChildStyle={{
           overflow: 'hidden',
           position: 'relative',
+          borderRadius: '5px',
           '&:hover > img': {
             filter: 'blur(6px)',
+            transform: 'scale(1.1)',
             transition: '200ms ease-in-out'
           },
           '&:hover > div': {
@@ -161,7 +162,7 @@ const ProjectCard = ({
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'space-between',
-            bg: 'rgba(255,255,255, .4)',
+            bg: 'rgba(255,255,255, .9)',
             transition: '200ms ease-in-out',
             py: 2,
             px: 3
@@ -176,7 +177,7 @@ const ProjectCard = ({
               lineHeight: 1.5,
               fontWeight: 300,
               color: 'text',
-              fontSize: ['14px', 2],
+              fontSize: ['14px', '18px'],
               fontFamily: "'Roboto', sans-serif",
             }}
           >
@@ -189,13 +190,14 @@ const ProjectCard = ({
             sx={{
               display: 'flex',
               flexDirection: 'row',
-              flexWrap: 'wrap'
+              flexWrap: 'wrap',
             }}
           >
-            {badges.map((tool, i) => {
+
+            {tools.map((tool, index) => {
               return (
                 <BadgeItem
-                  key={i}
+                  key={index}
                   originIndex={0}
                   delayPerPixel={delayPerPixel}
                   originOffset={originOffset}
@@ -215,13 +217,14 @@ const ProjectCard = ({
           flexDirection: 'row',
           pl: [3, 0],
           fontWeight: 400,
+          justifyContent: ['left', i % 2 === 0 ? 'start' : 'end']
         }}
       >
         <Link
           href={siteUrl}
           sx={{
             color: 'blue',
-            fontSize: '16px',
+            fontSize: ['14px', '18px'],
             mr: '7px'
           }}
           target='_blank'
@@ -232,7 +235,7 @@ const ProjectCard = ({
           href={repoUrl}
           sx={{
             color: 'blue',
-            fontSize: '16px',
+            fontSize: ['14px', '18px'],
           }}
           target='_blank'
         >
