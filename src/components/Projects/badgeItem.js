@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const BadgeItem = ({
   delayPerPixel,
-  i,
+  index,
   originIndex = 0,
   originOffset,
   animate,
@@ -25,7 +25,7 @@ const BadgeItem = ({
       left: element.offsetLeft
     };
 
-    if (i === originIndex) {
+    if (index === originIndex) {
       originOffset.current = offset.current;
     }
   }, [delayPerPixel]);
@@ -59,7 +59,7 @@ const BadgeItem = ({
       custom={delayRef}
       sx={{
         bg: 'transparent',
-        fontSize: ['14px', '16px'],
+        fontSize: ['14px', '18px'],
         fontWeight: 400,
         color: 'blue',
         boxShadow: 'inset 0 0 0 2px',
