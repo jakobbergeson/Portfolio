@@ -56,6 +56,23 @@ const ProjectCard = ({
     }
   };
 
+  const dividerVariant = {
+    hidden: {
+      y: 20,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.6,
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.4
+      }
+    }
+  };
+
   return (
     <div
       sx={projectCardStyles.container}
@@ -71,41 +88,18 @@ const ProjectCard = ({
       >
         <Text
           variant='text.h2'
-          sx={{
-            mb: [1],
-            textTransform: 'uppercase',
-            fontWeight: 600,
-            letterSpacing: '0px',
-            color: 'black',
-            fontSize: ['24px', null, null, '28px']
-          }}
+          sx={projectCardStyles.header}
         >
           {header}
         </Text>
         <Text
           variant='text.h4'
-          sx={{
-            mb: [1],
-            textTransform: 'uppercase',
-            fontWeight: 600,
-            letterSpacing: '0px',
-            fontWeight: 'body',
-            color: 'black',
-            fontSize: ['18px', '20px']
-          }}
+          sx={projectCardStyles.subHeader}
         >
           {subHeader}
         </Text>
         <div
-          sx={{
-            mb: [4],
-            lineHeight: 1.5,
-            fontWeight: 300,
-            color: 'text',
-            fontSize: ['14px', 2],
-            fontStyle: 'italic',
-            fontFamily: "'Roboto', sans-serif",
-          }}
+          sx={projectCardStyles.devDate}
         >
           {devDate}
         </div>
@@ -126,60 +120,21 @@ const ProjectCard = ({
           setHoverState('hidden');
         }}
 
-        sxChildStyle={{
-          overflow: 'hidden',
-          position: 'relative',
-          borderRadius: '5px',
-          '&:hover > img': {
-            filter: 'blur(6px)',
-            transform: 'scale(1.1)',
-            transition: '200ms ease-in-out'
-          },
-          '&:hover > div': {
-            opacity: 1,
-            transition: '200ms ease-in-out'
-          }
-        }}
+        sxChildStyle={projectCardStyles.imageBox}
       >
         <Image
           src={sitePic}
-          sx={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover',
-            objectPosition: 'center',
-            transition: '200ms ease-in-out',
-            minHeight: ['80vw', '330px'],
-          }}
+          sx={projectCardStyles.image}
         />
         <div
 
-          sx={{
-            opacity: 0,
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            bg: 'rgba(255,255,255, .9)',
-            transition: '200ms ease-in-out',
-            py: 2,
-            px: 3
-          }}
+          sx={projectCardStyles.descDiv}
         >
           <motion.p
             variants={sumVariants}
             initial='hidden'
             animate={hoverState}
-            sx={{
-              mb: [4],
-              lineHeight: 1.5,
-              fontWeight: 300,
-              color: 'text',
-              fontSize: ['14px', '18px'],
-              fontFamily: "'Roboto', sans-serif",
-            }}
+            sx={projectCardStyles.description}
           >
             {description}
           </motion.p>
@@ -187,11 +142,7 @@ const ProjectCard = ({
             initial="hidden"
             animate={hoverState}
             variants={{}}
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-            }}
+            sx={projectCardStyles.tools}
           >
 
             {tools.map((tool, index) => {
@@ -217,29 +168,35 @@ const ProjectCard = ({
           flexDirection: 'row',
           pl: [3, 0],
           fontWeight: 400,
-          justifyContent: ['left', i % 2 === 0 ? 'start' : 'end']
+          justifyContent: ['left', i % 2 === 0 ? 'start' : 'end'],
+          alignItems: 'center'
         }}
       >
         <Link
           href={siteUrl}
-          sx={{
-            color: 'blue',
-            fontSize: ['14px', '18px'],
-            mr: '7px'
-          }}
+          sx={projectCardStyles.link}
           target='_blank'
         >
           View Site
         </Link>
+        <Box
+          childVariant={dividerVariant}
+          sx={{
+            mx: 1,
+            my: 0,
+            lineHeight: 1,
+            color: 'blue',
+            textAlign: 'center',
+            fontSize: ['30px'],
+          }}
+        > |
+        </Box>
         <Link
           href={repoUrl}
-          sx={{
-            color: 'blue',
-            fontSize: ['14px', '18px'],
-          }}
+          sx={projectCardStyles.link}
           target='_blank'
         >
-          {' '}  | View Repo
+          View Repo
         </Link>
       </Box>
     </div>
