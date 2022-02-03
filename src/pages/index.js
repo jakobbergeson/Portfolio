@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
   const content = useMemo(() => ({
     projects: data?.projects,
     about: data?.about,
-    // stacks: data?.stacks,
+    stacks: data?.stacks,
   }), []);
 
   return (
@@ -54,6 +54,19 @@ export const query = graphql`
     about:contentfulAbout {
       text {
         text
+      }
+    }
+    stacks: allContentfulStacks {
+      edges {
+        node {
+          title
+          images {
+            title
+            file {
+              url
+            }
+          }
+        }
       }
     }
   }
