@@ -83,7 +83,7 @@ const ProjectCard = ({
           display: 'flex',
           flexDirection: 'column',
           pl: [3, 0],
-          textAlign: ['left', i % 2 === 0 ? 'left' : 'right']
+          textAlign: ['left', null, null, null, null, i % 2 === 0 ? 'left' : 'right']
         }}
       >
         <Text
@@ -168,7 +168,7 @@ const ProjectCard = ({
           flexDirection: 'row',
           pl: [3, 0],
           fontWeight: 400,
-          justifyContent: ['left', i % 2 === 0 ? 'start' : 'end'],
+          justifyContent: ['left', null, null, null, null, i % 2 === 0 ? 'start' : 'end'],
           alignItems: 'center'
         }}
       >

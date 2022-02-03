@@ -6,7 +6,7 @@ export const projectCardStyles = {
     width: '500px',
     minWidth: 0,
     mt: '24px',
-    mb: ' 24px',
+    mb: ['24px', null, null, '48px'],
     ml: [0, null, '24px'],
     mr: [0, null, '24px', null, null, '56px']
   },
@@ -96,8 +96,6 @@ export const projectCardStyles = {
     textTransform: 'uppercase',
     color: 'black',
     fontSize: ['16px', '18px'],
-    // color: 'blue',
-    // fontSize: ['14px', '18px'],
     mx: 0
   }
 }
