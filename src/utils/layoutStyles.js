@@ -1,6 +1,6 @@
 export const layoutStyles = {
   icon: {
-    position: 'fixed',
+    position: 'absolute',
     top: 20,
     left: 20,
     width: 'fit-content',

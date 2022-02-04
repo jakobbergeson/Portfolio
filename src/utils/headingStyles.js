@@ -3,7 +3,7 @@ export const headingStyles = {
     margin: 0,
     minWidth: 0,
     maxWidth: 'max-content',
-    mb: ['24px', null, null, '48px'],
+    mb: ['80px'],
   },
   header: {
     m: 0,
