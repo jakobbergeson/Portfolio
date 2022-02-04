@@ -11,7 +11,7 @@ import { projectStyles } from '../../utils';
 const Projects = ({ content }) => {
   return (
     <Col
-      id="projects"
+      id='projects'
       sx={projectStyles.column}
     >
       <Heading
@@ -19,7 +19,6 @@ const Projects = ({ content }) => {
       />
       <div
         sx={projectStyles.box}
-
       >
         {content.edges.map(({ node }, i) => {
           return (

@@ -7,6 +7,8 @@ import { ctaStyles } from "./ctaStyles";
 import { headingStyles } from "./headingStyles";
 import { projectStyles } from "./projectStyles";
 import { projectCardStyles } from "./projectCardStyles";
+import { stackStyles } from "./stackStyles";
+import { stackColumnStyles } from "./stackColumnStyles";
 
 export {
   navStyles,
@@ -18,4 +20,6 @@ export {
   headingStyles,
   projectStyles,
   projectCardStyles,
+  stackStyles,
+  stackColumnStyles,
 };
