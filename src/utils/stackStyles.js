@@ -3,7 +3,7 @@ export const stackStyles = {
     alignItems: 'center',
     justifyContent: 'center',
     pt: [4],
-    mb: [5, '80px', '144px'],
+    // mb: [5, '80px', '144px'],
   },
   box: {
     position: 'relative',

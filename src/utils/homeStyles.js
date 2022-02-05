@@ -16,6 +16,6 @@ export const homeStyles = {
     bg: 'primary',
     paddingTop: ['32px', null, null, '160px'],
     px: 2,
-    paddingBottom: ['80px', '193px'],
+    paddingBottom: ['80px', '160px'],
   }
 }

@@ -13,7 +13,6 @@ const Home = ({ content }) => {
     >
       <About
         content={content.about}
-
       />
       <Projects
         content={content.projects}
