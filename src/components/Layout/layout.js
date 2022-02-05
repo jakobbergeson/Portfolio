@@ -3,6 +3,7 @@ import * as React from 'react';
 import { jsx } from 'theme-ui';
 import { motion } from 'framer-motion';
 import Title from '../Title/title';
+import { Footer } from "../Footer";
 import { layoutStyles } from '../../utils/';
 
 const Layout = ({ children }) => {
@@ -101,8 +102,7 @@ const Layout = ({ children }) => {
           </motion.svg>
         </motion.a>
         <main>{children}</main>
-
-
+        <Footer />
       </article>
     </>
   );
