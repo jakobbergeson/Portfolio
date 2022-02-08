@@ -15,7 +15,7 @@ const FooterHeading = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start'
+          alignItems: ['center', 'flex-start']
         }}
       >
         <Text
@@ -24,17 +24,44 @@ const FooterHeading = () => {
             ...textSx,
             'WebkitTextFillColor': 'transparent',
             'WebkitTextStrokeWidth': '1px',
-            'WebkitTextStrokeColor': 'primary',
+            'WebkitTextStrokeColor': '#48cae4',
           }}
         >
           GET IN
         </Text>
         <Text
           variant='text.h2'
-          sx={{ ...textSx, mb: [3] }}
+          sx={{
+            ...textSx,
+            mb: [3],
+            'WebkitTextFillColor': 'transparent',
+            'WebkitTextStrokeWidth': '1px',
+            'WebkitTextStrokeColor': '#48cae4',
+          }}
         >
           TOUCH
         </Text>
+        <Col>
+          <Text
+            sx={{
+              lineHeight: 1,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              color: 'blue',
+              fontSize: '16px',
+              mb: ' 4px',
+            }}
+          >
+            jakobbergeson.dev@gmail.com
+          </Text>
+          <div
+            sx={{
+              bg: 'blue',
+              height: '3px',
+              width: '100%',
+            }}
+          />
+        </Col>
       </Box>
     </Col>
   );
@@ -42,16 +69,15 @@ const FooterHeading = () => {
 export default FooterHeading;
 
 const boxSx = {
-  alignItems: 'flex-start',
-  justifyContent: 'center',
+  alignItems: ['center', 'flex-start'],
+  justifyContent: ['flex-start', 'center'],
   position: 'absolute',
-  width: '100%',
-  height: '100%',
+  mt: '60px',
   top: 0,
   left: 0,
   bottom: 0,
   right: 0,
-  pl: [3, 5]
+  pl: [0, 5]
 };
 
 const textSx = {
@@ -65,5 +91,5 @@ const textSx = {
   fontWeight: 600,
   textTransform: 'uppercase',
   color: 'primary',
-  fontSize: ['44px', null, '70px', null, '104px'],
+  fontSize: ['60px', null, '70px', null, '104px'],
 };

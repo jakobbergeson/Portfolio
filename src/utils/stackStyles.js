@@ -2,8 +2,7 @@ export const stackStyles = {
   column: {
     alignItems: 'center',
     justifyContent: 'center',
-    pt: [4],
-    // mb: [5, '80px', '144px'],
+    pt: [4]
   },
   box: {
     position: 'relative',
