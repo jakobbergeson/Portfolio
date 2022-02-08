@@ -2,27 +2,34 @@
 import { jsx } from 'theme-ui';
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-export const DragButton = () => {
-  const x = useMotionValue(0);
-  const xInput = [-100, 0, 100];
-  const background = useTransform(x, xInput, [
-    "linear-gradient(180deg,  #63cfe9 0%, #17acfa 100%)",
-    "linear-gradient(180deg, #f6f6f6 0%, #f6f6f6 100%)",
-    "linear-gradient(180deg, #63cfe9 0%, #17acfa 100%)"
-  ]);
-  const color = useTransform(x, xInput, ["#48cae4", "#17acfa", "#48cae4"]);
-  const tickPath = useTransform(x, [10, 100], [0, 1]);
-  const tickPath2 = useTransform(x, [-10, -100], [0, 1]);
+
+const DragButton = ({
+  x,
+  background,
+  color,
+  tickPath,
+  tickPath2,
+}) => {
+
+  const onMouseClick = (e) => {
+    return (
+      navigator.clipboard.writeText('jakobbergeson.dev@gmail.com')
+    );
+  };
+
 
   return (
     <motion.div
       sx={{
         width: '100%',
         height: ' 100%',
+        display: 'block'
       }}
-      style={{ background }}>
+      style={{ background }}
+    >
       <motion.div
         sx={{
+          justifySelf: 'flex-end',
           background: '#f6f6f6',
           borderRadius: '20%',
           position: 'absolute',
@@ -37,6 +44,7 @@ export const DragButton = () => {
         style={{ x }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
+        onMouseDown={onMouseClick}
       >
         <svg
           sx={{

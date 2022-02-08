@@ -1,11 +1,23 @@
 /** @jsx jsx */
-import { jsx, Text } from 'theme-ui';
+import { jsx, Image } from 'theme-ui';
+import { useMotionValue, useTransform } from "framer-motion";
 import { Col } from '../Components';
 import { Box } from '../Animations';
 import FooterHeading from './footerHeading';
 import DragButton from './dragButton';
 
 const Footer = () => {
+
+  const x = useMotionValue(0);
+  const xInput = [-100, 0, 100];
+  const background = useTransform(x, xInput, [
+    "linear-gradient(180deg, #f6f6f6 0%, #f6f6f6 100%)",
+    "linear-gradient(180deg, #48cae4 0%, #48cae4 100%)",
+    "linear-gradient(180deg,  #f6f6f6 0%, #f6f6f6 100%)"
+  ]);
+  const color = useTransform(x, xInput, ["#48cae4", "#000000", "#48cae4"]);
+  const tickPath = useTransform(x, [10, 100], [0, 1]);
+  const tickPath2 = useTransform(x, [-10, -100], [0, 1]);
 
   const insVariant = {
     hidden: {
@@ -31,7 +43,6 @@ const Footer = () => {
         justifyContent: 'center',
         alignItems: 'flex-start',
         height: ['350px', '440px', null, '506px', '600px'],
-        bg: 'transparent',
       }}
     >
       <Box
@@ -54,7 +65,13 @@ const Footer = () => {
         Slide circle to copy email
       </Box>
       <FooterHeading />
-      <DragButton />
+      <DragButton
+        x={x}
+        background={background}
+        color={color}
+        tickPath={tickPath}
+        tickPath2={tickPath2}
+      />
     </Col>
   );
 };
