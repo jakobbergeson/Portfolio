@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Text } from 'theme-ui';
+import { motion } from 'framer-motion';
 import { Col } from '../Components';
 import { Box } from '../Animations';
 
@@ -15,48 +16,48 @@ const FooterHeading = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: ['center', 'flex-start']
+          alignItems: ['center', 'flex-start'],
         }}
       >
-        <Text
-          variant='text.h2'
+        <motion.div
+          // variant='text.h2'
           sx={{
             ...textSx,
             'WebkitTextFillColor': 'transparent',
             'WebkitTextStrokeWidth': '1px',
-            'WebkitTextStrokeColor': '#48cae4',
+            'WebkitTextStrokeColor': 'primary',
           }}
         >
-          GET IN
-        </Text>
-        <Text
-          variant='text.h2'
+          LET'S BUILD
+        </motion.div>
+        <motion.div
+          // variant='text.h2'
           sx={{
             ...textSx,
             mb: [3],
-            'WebkitTextFillColor': 'transparent',
+            'WebkitTextFillColor': '#48cae4',
             'WebkitTextStrokeWidth': '1px',
             'WebkitTextStrokeColor': '#48cae4',
           }}
         >
-          TOUCH
-        </Text>
+          TOGETHER
+        </motion.div>
         <Col>
           <Text
             sx={{
               lineHeight: 1,
               fontWeight: 600,
               textTransform: 'uppercase',
-              color: 'blue',
+              color: 'primary',
               fontSize: '16px',
               mb: ' 4px',
             }}
           >
             jakobbergeson.dev@gmail.com
           </Text>
-          <div
+          <motion.div
             sx={{
-              bg: 'blue',
+              bg: 'primary',
               height: '3px',
               width: '100%',
             }}
@@ -91,5 +92,5 @@ const textSx = {
   fontWeight: 600,
   textTransform: 'uppercase',
   color: 'primary',
-  fontSize: ['60px', null, '70px', null, '104px'],
+  fontSize: ['44px', null, '70px', null, '104px'],
 };
