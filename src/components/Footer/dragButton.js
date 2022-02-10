@@ -5,13 +5,32 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const DragButton = ({
   x,
-  background,
   color,
+  opacity,
+  drag,
   tickPath,
   tickPath2,
 }) => {
 
-  const onMouseClick = (e) => {
+  const dragVariant = {
+    initial: {
+      y: 50,
+      x: 0,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.4,
+      },
+    }
+  };
+
+  const onMouseDown = (e) => {
     return (
       navigator.clipboard.writeText('jakobbergeson.dev@gmail.com')
     );
@@ -21,18 +40,45 @@ const DragButton = ({
   return (
     <motion.div
       sx={{
-        width: '100%',
-        height: ' 100%',
-        display: 'block'
+        position: 'relative',
+        display: 'flex',
+        flexDirection: ['column', 'row'],
+        alignItems: 'center',
+        mb: [3],
+        width: '100%'
       }}
-      style={{ background }}
+      style={{
+        // right: '30%'
+      }}
+
     >
       <motion.div
+        // variant='text.h2'
         sx={{
-          justifySelf: 'flex-end',
+          ...textSx,
+          'WebkitTextFillColor': '#48cae4',
+          'WebkitTextStrokeWidth': '1px',
+          'WebkitTextStrokeColor': '#48cae4',
+
+        }}
+        style={{
+          marginRight: 3,
+          position: 'relative',
+          left: drag,
+          right: drag
+          // opacity: opacity
+        }}
+        variants={dragVariant}
+        initial='initial'
+        animate='visible'
+      >
+        TOGETHER
+      </motion.div>
+      <motion.div
+        sx={{
           background: '#f6f6f6',
           borderRadius: '20%',
-          position: 'absolute',
+          position: ['static', 'absolute'],
           width: ['65px', '150px'],
           height: ['65px', '150px'],
           top: ['calc(80% - 65px / 2)', 'calc(50% - 150px / 2)'],
@@ -44,7 +90,7 @@ const DragButton = ({
         style={{ x }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        onMouseDown={onMouseClick}
+        onMouseDown={onMouseDown}
       >
         <svg
           sx={{
@@ -83,3 +129,18 @@ const DragButton = ({
 };
 
 export default DragButton;
+
+const textSx = {
+  boxSizing: 'border-box',
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'row',
+  m: 0,
+  mb: [3],
+  minWidth: 0,
+  lineHeight: 1.1,
+  fontWeight: 600,
+  textTransform: 'uppercase',
+  color: 'primary',
+  fontSize: ['44px', null, '70px', null, '104px'],
+};

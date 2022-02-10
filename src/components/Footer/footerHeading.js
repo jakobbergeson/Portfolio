@@ -30,7 +30,7 @@ const FooterHeading = () => {
         >
           LET'S BUILD
         </motion.div>
-        <motion.div
+        {/* <motion.div
           // variant='text.h2'
           sx={{
             ...textSx,
@@ -41,8 +41,8 @@ const FooterHeading = () => {
           }}
         >
           TOGETHER
-        </motion.div>
-        <Col>
+        </motion.div> */}
+        {/* <Col>
           <Text
             sx={{
               lineHeight: 1,
@@ -62,7 +62,7 @@ const FooterHeading = () => {
               width: '100%',
             }}
           />
-        </Col>
+        </Col> */}
       </Box>
     </Col>
   );

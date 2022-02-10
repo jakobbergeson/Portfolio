@@ -23,6 +23,7 @@ const StackColumn = ({
         {images.map((image, i) => {
           return (
             <Box
+              key={i}
               sx={{
                 width: '90px',
                 m: [1],
