@@ -42,10 +42,10 @@ const DragButton = ({
       sx={{
         position: 'relative',
         display: 'flex',
-        flexDirection: ['column', 'row'],
+        flexDirection: ['column', null, null, null, null, 'row'],
         alignItems: 'center',
         mb: [3],
-        width: '100%'
+        width: ['100%', 'fit-content']
       }}
       style={{
         // right: '30%'
@@ -78,11 +78,11 @@ const DragButton = ({
         sx={{
           background: '#f6f6f6',
           borderRadius: '20%',
-          position: ['static', 'absolute'],
-          width: ['65px', '150px'],
-          height: ['65px', '150px'],
-          top: ['calc(80% - 65px / 2)', 'calc(50% - 150px / 2)'],
-          left: ['calc(50% - 65px / 2)', ' calc(50% - 150px / 2)'],
+          position: ['static', null, null, null, null, 'absolute'],
+          width: ['65px', '125px'],
+          height: ['65px', '125px'],
+          top: ['calc(80% - 65px / 2)', 'calc(50% - 125px / 2)'],
+          left: ['calc(50% - 65px / 2)', ' calc(100% + 125px / 2)'],
           display: 'flex',
           justifyContent: 'center',
           alignItems: ' center',
