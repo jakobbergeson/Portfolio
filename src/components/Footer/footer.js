@@ -3,11 +3,12 @@ import { jsx, Image, Text } from 'theme-ui';
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Col } from '../Components';
 import { Box } from '../Animations';
-import FooterHeading from './footerHeading';
+import { useIsMedium } from '../../hooks/utils/mediaQuery';
 import DragButton from './dragButton';
 
 const Footer = () => {
 
+  const isMedium = useIsMedium();
   const x = useMotionValue(0);
   const xInput = [-100, 0, 100];
   const background = useTransform(x, xInput, [
@@ -21,23 +22,42 @@ const Footer = () => {
   const tickPath = useTransform(x, [10, 100], [0, 1]);
   const tickPath2 = useTransform(x, [-10, -100], [0, 1]);
 
-  const insVariant = {
-    hidden: {
-      y: 50,
-      x: '-50%',
-      opacity: 0
-    },
-    visible: {
-      y: 0,
-      x: '-50%',
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.4,
+
+  const insVariant = isMedium ?
+    {
+      hidden: {
+        y: -10,
+        x: 0,
+        opacity: 0
       },
-    }
-  };
+      visible: {
+        y: -10,
+        x: 100,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.4,
+        },
+      }
+    } :
+    {
+      hidden: {
+        y: 50,
+        x: '-50%',
+        opacity: 0
+      },
+      visible: {
+        y: 0,
+        x: '-50%',
+        opacity: 1,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.4,
+        },
+      }
+    };
 
   return (
     <motion.div
@@ -46,8 +66,8 @@ const Footer = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: ['center', 'start'],
-        p: ['16px', '80px'],
+        alignItems: ['center', null, null, null, null, 'start'],
+        p: ['16px', null, null, null, null, '100px'],
         height: ['350px', '440px', null, '506px', '600px'],
       }}
       style={{ background }}
@@ -64,8 +84,8 @@ const Footer = () => {
           p: '16px',
           bg: 'black',
           position: 'absolute',
-          top: '-10px',
-          left: '50%',
+          top: ['-10px', null, null, null, null, 0],
+          left: ['50%', null, null, null, null, 0],
           zIndex: 1000
         }}
         variants={insVariant}
@@ -74,13 +94,12 @@ const Footer = () => {
       >
         Slide circle to copy email
       </motion.div>
-      {/* <FooterHeading /> */}
       <Box
         amount={0.25}
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: ['center', 'flex-start']
+          alignItems: ['center', null, null, null, null, 'flex-start']
         }}
       >
         <motion.div
