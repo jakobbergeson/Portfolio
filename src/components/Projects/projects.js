@@ -38,6 +38,7 @@ const Projects = ({ content }) => {
         })}
       </div>
       <CtaButton
+        to={'https://github.com/jakobbergeson'}
         blurb={'Go To GitHub'}
         image={<GitHub />}
       />

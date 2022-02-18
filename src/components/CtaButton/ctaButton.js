@@ -10,6 +10,7 @@ const CtaButton = ({
   sxChildStyle,
   sxBlurbStyle,
   sxImageStyle,
+  to,
   blurb,
   image,
 }) => {
@@ -29,18 +30,28 @@ const CtaButton = ({
       onHoverEnd={() => setHoverState('hidden')}
       viewport={ctaViewport}
     >
-      <div
-        sx={sxBlurbStyle || ctaStyles.ctaBlurb}
+      <a
+        href={to}
+        rel="noreferrer"
+        target='_blank'
+        sx={{
+          display: 'flex',
+          alignItems: 'center'
+        }}
       >
-        {blurb}
-      </div>
-      <Circle
-        sxCircleStyle={sxChildStyle || ctaStyles.circle}
-        sxCircleChildStyle={sxImageStyle || ctaStyles.circleImageBox}
-        animate={hoverState}
-        children={image}
-      >
-      </Circle>
+        <div
+          sx={sxBlurbStyle || ctaStyles.ctaBlurb}
+        >
+          {blurb}
+        </div>
+        <Circle
+          sxCircleStyle={sxChildStyle || ctaStyles.circle}
+          sxCircleChildStyle={sxImageStyle || ctaStyles.circleImageBox}
+          animate={hoverState}
+          children={image}
+        >
+        </Circle>
+      </a>
     </Box>
   );
 };

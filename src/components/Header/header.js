@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { useRef } from 'react';
 import { jsx } from 'theme-ui';
 import { Line } from '../Animations';
 import { Nav } from '../Nav/';
@@ -15,9 +14,9 @@ const Header = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.2,
+        delay: 0.1,
         when: 'beforeChildren',
-        staggerChildren: 0.3,
+        staggerChildren: 0.25,
       },
     }
   };
@@ -47,6 +46,7 @@ const Header = () => {
         <Line
           sxContainerStyle={headerStyles.headingBox}
           sxChildStyle={headerStyles.heading2}
+          sxChildStyleVar={headerStyles.heading1}
           containerVariant={containerVariant}
           childVariant={childVariant}
           animate={'visible'}

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 const Line = ({
   sxContainerStyle,
   sxChildStyle,
+  sxChildStyleVar,
   containerVariant,
   childVariant,
   animate,
@@ -22,7 +23,7 @@ const Line = ({
         return (
           <motion.div
             key={i}
-            sx={sxChildStyle}
+            sx={i % 2 === 0 ? sxChildStyle : sxChildStyleVar}
             variants={childVariant}
           >
             {child}

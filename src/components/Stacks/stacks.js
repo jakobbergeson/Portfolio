@@ -6,7 +6,7 @@ import StackColumn from './stackColumn';
 import { stackStyles } from '../../utils';
 
 const Stacks = ({ content }) => {
-  console.log("STACKS", content);
+
   return (
     <Col
       id='stacks'

@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from 'react';
 import { jsx } from 'theme-ui';
 import { motion } from 'framer-motion';
 
@@ -10,7 +9,6 @@ const LinkedIn = () => {
       focusable="false"
       data-prefix="fab"
       data-icon="linkedin-in"
-      class="svg-inline--fa fa-linkedin-in fa-w-14"
       role="img" xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
       sx={{
