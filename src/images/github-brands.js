@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from 'react';
 import { jsx } from 'theme-ui';
 import { motion } from 'framer-motion';
 
@@ -14,7 +13,7 @@ const GitHub = () => {
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 496 512"
-      sx={{
+      style={{
         height: '30px',
         fill: 'inherit'
       }}

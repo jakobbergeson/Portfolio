@@ -1,14 +1,13 @@
 /** @jsx jsx */
-import { jsx, Image, Text } from 'theme-ui';
+import { jsx, Text } from 'theme-ui';
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Col } from '../Components';
 import { Box } from '../Animations';
-import { useIsMedium } from '../../hooks/utils/mediaQuery';
 import DragButton from './dragButton';
+import Instruction from './instructions';
 
 const Footer = () => {
 
-  const isMedium = useIsMedium();
   const x = useMotionValue(0);
   const xInput = [-100, 0, 100];
   const background = useTransform(x, xInput, [
@@ -17,47 +16,10 @@ const Footer = () => {
     "linear-gradient(180deg,  #f6f6f6 0%, #f6f6f6 100%)"
   ]);
   const color = useTransform(x, xInput, ["#48cae4", "#000000", "#48cae4"]);
-  const opacity = useTransform(x, [10, 100], [0, 1]);
+  const opacity = useTransform(x, xInput, ["rgba(246, 246, 246, 0.0)", "rgba(246, 246, 246, 1.0)", "rgba(246, 246, 246, 0.0)"]);
   const drag = useTransform(x, [-100, 0, 100], [-50, 0, 50]);
   const tickPath = useTransform(x, [10, 100], [0, 1]);
   const tickPath2 = useTransform(x, [-10, -100], [0, 1]);
-
-
-  const insVariant = isMedium ?
-    {
-      hidden: {
-        y: -10,
-        x: 0,
-        opacity: 0
-      },
-      visible: {
-        y: -10,
-        x: 100,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          bounce: 0.4,
-          duration: 0.4,
-        },
-      }
-    } :
-    {
-      hidden: {
-        y: 50,
-        x: '-50%',
-        opacity: 0
-      },
-      visible: {
-        y: 0,
-        x: '-50%',
-        opacity: 1,
-        transition: {
-          type: "spring",
-          bounce: 0.4,
-          duration: 0.4,
-        },
-      }
-    };
 
   return (
     <motion.div
@@ -72,28 +34,7 @@ const Footer = () => {
       }}
       style={{ background }}
     >
-      <motion.div
-        sx={{
-          lineHeight: 1,
-          width: 'fit-content',
-          letterSpacing: 0,
-          fontWeight: 600,
-          textTransform: 'uppercase',
-          fontSize: ['14px', '16px'],
-          color: 'white',
-          p: '16px',
-          bg: 'black',
-          position: 'absolute',
-          top: ['-10px', null, null, null, null, 0],
-          left: ['50%', null, null, null, null, 0],
-          zIndex: 1000
-        }}
-        variants={insVariant}
-        initial='hidden'
-        animate='visible'
-      >
-        Slide circle to copy email
-      </motion.div>
+      <Instruction />
       <Box
         amount={0.25}
         sx={{
@@ -103,9 +44,19 @@ const Footer = () => {
         }}
       >
         <motion.div
-          // variant='text.h2'
           sx={{
-            ...textSx,
+            boxSizing: 'border-box',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            m: 0,
+            mb: [3],
+            minWidth: 0,
+            lineHeight: 1.1,
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            color: 'primary',
+            fontSize: ['44px', null, '70px', null, '104px'],
             'WebkitTextFillColor': 'transparent',
             'WebkitTextStrokeWidth': '1px',
             'WebkitTextStrokeColor': 'primary',
@@ -149,18 +100,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-const textSx = {
-  boxSizing: 'border-box',
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  m: 0,
-  mb: [3],
-  minWidth: 0,
-  lineHeight: 1.1,
-  fontWeight: 600,
-  textTransform: 'uppercase',
-  color: 'primary',
-  fontSize: ['44px', null, '70px', null, '104px'],
-};

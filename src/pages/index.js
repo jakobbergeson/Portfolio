@@ -27,7 +27,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    projects:allContentfulProjectCard {
+    projects: allContentfulProjectCard(sort: { fields: date, order: ASC }) {
     edges {
       node {
         id
@@ -46,12 +46,12 @@ export const query = graphql`
       }
     }
   }
-    about:contentfulAbout {
+    about: contentfulAbout {
       text {
         text
       }
     }
-    stacks: allContentfulStacks {
+    stacks: allContentfulStacks(sort: { fields: date, order: ASC }) {
       edges {
         node {
           title
