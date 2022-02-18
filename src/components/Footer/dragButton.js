@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useState, useEffect } from 'react';
 
 
 const DragButton = ({
@@ -47,15 +48,21 @@ const DragButton = ({
         mb: [3],
         width: ['100%', 'fit-content']
       }}
-      style={{
-        // right: '30%'
-      }}
-
     >
       <motion.div
-        // variant='text.h2'
         sx={{
-          ...textSx,
+          boxSizing: 'border-box',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'row',
+          m: 0,
+          mb: [3],
+          minWidth: 0,
+          lineHeight: 1.1,
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          color: 'primary',
+          fontSize: ['44px', null, '70px', null, '104px'],
           'WebkitTextFillColor': '#48cae4',
           'WebkitTextStrokeWidth': '1px',
           'WebkitTextStrokeColor': '#48cae4',
@@ -65,8 +72,7 @@ const DragButton = ({
           marginRight: 3,
           position: 'relative',
           left: drag,
-          right: drag
-          // opacity: opacity
+          right: drag,
         }}
         variants={dragVariant}
         initial='initial'
@@ -76,7 +82,6 @@ const DragButton = ({
       </motion.div>
       <motion.div
         sx={{
-          background: '#f6f6f6',
           borderRadius: '20%',
           position: ['static', null, null, null, null, 'absolute'],
           width: ['65px', '125px'],
@@ -87,7 +92,10 @@ const DragButton = ({
           justifyContent: 'center',
           alignItems: ' center',
         }}
-        style={{ x }}
+        style={{
+          x,
+          background: opacity
+        }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         onMouseDown={onMouseDown}
@@ -129,18 +137,3 @@ const DragButton = ({
 };
 
 export default DragButton;
-
-const textSx = {
-  boxSizing: 'border-box',
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  m: 0,
-  mb: [3],
-  minWidth: 0,
-  lineHeight: 1.1,
-  fontWeight: 600,
-  textTransform: 'uppercase',
-  color: 'primary',
-  fontSize: ['44px', null, '70px', null, '104px'],
-};
