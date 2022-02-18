@@ -27,6 +27,7 @@ const About = ({ content }) => {
           children={content.text.text}
         />
         <CtaButton
+          to={'https://www.linkedin.com/in/jakobbergeson/'}
           blurb={'Go To LinkedIn'}
           image={<LinkedIn />}
         />

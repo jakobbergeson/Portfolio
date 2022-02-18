@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Avatar } from 'theme-ui';
-import * as React from 'react';
+import { jsx } from 'theme-ui';
 import { motion } from 'framer-motion';
 import { Box } from '../Animations/';
 import LeftBrace from '../../images/Left_Bracer_sm.svg';

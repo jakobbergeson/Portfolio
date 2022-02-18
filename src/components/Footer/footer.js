@@ -74,7 +74,10 @@ const Footer = () => {
         tickPath={tickPath}
         tickPath2={tickPath2}
       />
-      <Col>
+      <Col
+        id='contact'
+
+      >
         <Text
           sx={{
             lineHeight: 1,
