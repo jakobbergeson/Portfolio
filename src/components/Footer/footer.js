@@ -9,7 +9,7 @@ import Instruction from './instructions';
 const Footer = () => {
 
   const x = useMotionValue(0);
-  const xInput = [-100, 0, 100];
+  const xInput = [-50, 0, 50];
   const background = useTransform(x, xInput, [
     "linear-gradient(180deg, #f6f6f6 0%, #f6f6f6 100%)",
     "linear-gradient(180deg, #48cae4 0%, #48cae4 100%)",
@@ -17,9 +17,9 @@ const Footer = () => {
   ]);
   const color = useTransform(x, xInput, ["#48cae4", "#000000", "#48cae4"]);
   const opacity = useTransform(x, xInput, ["rgba(246, 246, 246, 0.0)", "rgba(246, 246, 246, 1.0)", "rgba(246, 246, 246, 0.0)"]);
-  const drag = useTransform(x, [-100, 0, 100], [-50, 0, 50]);
-  const tickPath = useTransform(x, [10, 100], [0, 1]);
-  const tickPath2 = useTransform(x, [-10, -100], [0, 1]);
+  const drag = useTransform(x, [-50, 0, 50], [-50, 0, 50]);
+  const tickPath = useTransform(x, [10, 50], [0, 1]);
+  const tickPath2 = useTransform(x, [-10, -50], [0, 1]);
 
   return (
     <motion.div
