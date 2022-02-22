@@ -16,14 +16,14 @@ const Header = () => {
       transition: {
         delay: 0.1,
         when: 'beforeChildren',
-        staggerChildren: 0.25,
+        // staggerChildren: 0.25,
       },
     }
   };
 
   const childVariant = {
     hidden: {
-      x: '-20%',
+      x: '-10%',
       opacity: 0
     },
     visible: {
