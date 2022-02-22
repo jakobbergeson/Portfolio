@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 const DragButton = ({
@@ -12,6 +12,8 @@ const DragButton = ({
   tickPath,
   tickPath2,
 }) => {
+
+  const [grab, setGrab] = useState(false);
 
   const dragVariant = {
     initial: {
@@ -32,6 +34,7 @@ const DragButton = ({
   };
 
   const onMouseDown = (e) => {
+    setGrab(true);
     return (
       navigator.clipboard.writeText('jakobbergeson.dev@gmail.com')
     );
@@ -81,6 +84,7 @@ const DragButton = ({
         TOGETHER
       </motion.div>
       <motion.div
+        onMouseEnter={() => setGrab(false)}
         sx={{
           borderRadius: '20%',
           position: ['static', null, null, null, null, 'absolute'],
@@ -91,6 +95,7 @@ const DragButton = ({
           display: 'flex',
           justifyContent: 'center',
           alignItems: ' center',
+          cursor: grab ? 'grab' : 'pointer',
         }}
         style={{
           x,
