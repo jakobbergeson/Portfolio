@@ -13,14 +13,13 @@ export const headerStyles = {
     overflow: 'hidden',
     background: 'hsla(190, 74%, 59%, 1)',
     background: 'linear-gradient(45deg, hsla(190, 74%, 59%, 0.8) 17%, hsla(202, 100%, 50%, 1) 100%)',
-
   },
   container: {
     boxSizing: 'border-box',
     m: 0,
     minWidth: 0,
     display: 'flex',
-    position: 'relative',
+    // position: 'relative',
     ml: [0, null, 'auto', '100px', null, '150px'],
     mr: [0, null, 'auto', '60px'],
     mb: '48px',
