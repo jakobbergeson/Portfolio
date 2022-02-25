@@ -13,9 +13,9 @@ const Nav = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 1.5,
+        delay: 2.7,
         when: 'beforeChildren',
-        staggerChildren: 0.25,
+        // staggerChildren: 0.0,
         mass: 0.2,
       },
     }
@@ -23,7 +23,7 @@ const Nav = () => {
 
   const childVariant = {
     hidden: {
-      y: '-100%',
+      y: '-90%',
       opacity: 0
     },
     visible: {
