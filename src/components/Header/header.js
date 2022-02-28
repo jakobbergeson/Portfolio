@@ -41,7 +41,7 @@ const Header = () => {
 
   const wrapperVariant = {
     hidden: {
-      clipPath: "circle(10% at 50% 50%)",
+      clipPath: "circle(0% at 50% 50%)",
     },
     visible: (height = 800) => ({
       clipPath: `circle(${height * 2}px at 50% 50%)`,
@@ -70,7 +70,7 @@ const Header = () => {
           containerVariant={containerVariant}
           childVariant={childVariant}
           animate={'visible'}
-          children={['Full - Stack', 'Software', 'Developer']}
+          children={['Full-Stack', 'Software', 'Developer']}
         />
         <Nav />
         <MobileNav />

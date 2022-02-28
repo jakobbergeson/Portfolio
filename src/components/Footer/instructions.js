@@ -6,13 +6,13 @@ import { useIsMedium } from '../../hooks/utils/mediaQuery';
 const Instruction = () => {
 
   const isMedium = useIsMedium();
-
+  console.log("IS MEDIUM", isMedium);
   const insVariant =
     isMedium ?
       {
         hidden: {
           y: -10,
-          x: 0,
+          x: 100,
           opacity: 0
         },
         visible: {
