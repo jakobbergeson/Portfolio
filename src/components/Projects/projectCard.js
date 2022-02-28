@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx, Text, Image, Link } from 'theme-ui';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from "framer-motion";
 import { Box } from '../Animations';
-import { useIsSmall } from '../../hooks/utils/mediaQuery';
 import BadgeItem from './badgeItem';
 import { projectCardStyles } from '../../utils';
 
@@ -20,8 +19,6 @@ const ProjectCard = ({
   delayPerPixel = 0.0008 }) => {
 
   const [hoverState, setHoverState] = useState('hidden');
-
-  const isSmall = useIsSmall();
 
   const originOffset = useRef({ top: 0, left: 0 });
 
@@ -43,45 +40,26 @@ const ProjectCard = ({
   };
 
   const linkVariants =
-    isSmall ?
-      {
-        hidden: {
-          x: i % 2 === 0 ? -50 : 50,
-          opacity: 0
-        },
-        visible: {
-          x: 0,
-          opacity: 1,
-          transition: {
-            delay: 0.3,
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.4
-          }
-        }
+  {
+    hidden: {
+      y: 50,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.3,
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.4
       }
-      :
-      {
-        hidden: {
-          x: 50,
-          opacity: 0
-        },
-        visible: {
-          x: 0,
-          opacity: 1,
-          transition: {
-            delay: 0.3,
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.4
-          }
-        }
-      }
-    ;
+    }
+  };
 
   const dividerVariant = {
     hidden: {
-      y: 20,
+      y: -20,
       opacity: 0
     },
     visible: {
@@ -164,7 +142,6 @@ const ProjectCard = ({
           <motion.div
             initial="hidden"
             animate={hoverState}
-            variants={{}}
             sx={projectCardStyles.tools}
           >
 
@@ -186,6 +163,7 @@ const ProjectCard = ({
       </Box>
       <Box
         childVariant={linkVariants}
+        amount={.7}
         sxChildStyle={{
           display: 'flex',
           flexDirection: 'row',

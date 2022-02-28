@@ -1,15 +1,16 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { motion } from 'framer-motion';
+
 const Icon = () => {
 
-  const svgVariants = {
+  const svgVariants =
+  {
     hidden: {
       fill: 'none',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: '10%',
       stroke: '#000000'
     },
     visible: {
@@ -59,7 +60,9 @@ const Icon = () => {
       sx={{
         position: 'absolute',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: ['50%', '30%', null, null, null, '20%', '15%']
       }}
       variants={svgVariants}
       initial='hidden'

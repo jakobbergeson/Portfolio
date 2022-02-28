@@ -15,12 +15,12 @@ const Path = props => (
 
 export const MenuToggle = ({ toggle }) => (
   <motion.button
-    initial={{ y: '-105%', x: -23 }}
+    initial={{ y: '-105%', x: -30 }}
     animate={{
       y: 0,
-      x: -23,
+      x: -30,
       transition: {
-        delay: 1.5,
+        delay: 3,
         type: 'spring',
         stiffness: 120,
         duration: 0.2,
@@ -29,7 +29,7 @@ export const MenuToggle = ({ toggle }) => (
     onClick={toggle}
     sx={navStyles.menuToggle}
   >
-    <svg width="45" height="45" viewBox="-8 -8 37 37">
+    <svg width="55" height="55" viewBox="-8 -8 37 37">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
