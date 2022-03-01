@@ -5,6 +5,7 @@ import { Line } from '../Animations';
 import { Icon } from '../Splash';
 import { Nav } from '../Nav/';
 import { MobileNav } from '../Nav/';
+import Chevron from './chevron';
 import { headerStyles } from '../../utils/headerStyles';
 
 const Header = () => {
@@ -72,6 +73,7 @@ const Header = () => {
           animate={'visible'}
           children={['Full-Stack', 'Software', 'Developer']}
         />
+        <Chevron />
         <Nav />
         <MobileNav />
       </div>
