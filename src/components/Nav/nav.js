@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import * as React from 'react';
 import { NavList } from '../Animations';
 import { navStyles } from '../../utils';
 
@@ -40,7 +39,7 @@ const Nav = () => {
   const whileHover = {
     boxShadow: '0px 0px 8px #ffffff',
     scale: 1.2,
-    borderRadius: '20%'
+    borderRadius: '20%',
   };
 
   const whileTap =
@@ -54,22 +53,20 @@ const Nav = () => {
   ];
 
   return (
-    <>
-      <nav sx={navStyles.wrapper}>
-        <div sx={navStyles.container}>
-          <NavList
-            sxContainerStyle={navStyles.container.list}
-            sxChildStyle={navStyles.container.list.circle}
-            containerVariant={containerVariant}
-            childVariant={childVariant}
-            animate={'visible'}
-            whileHover={whileHover}
-            whileTap={whileTap}
-            children={navItems}
-          />
-        </div>
-      </nav>
-    </>
+    <nav sx={navStyles.wrapper}>
+      <div sx={navStyles.container}>
+        <NavList
+          sxContainerStyle={navStyles.container.list}
+          sxChildStyle={navStyles.container.list.circle}
+          containerVariant={containerVariant}
+          childVariant={childVariant}
+          animate={'visible'}
+          whileHover={whileHover}
+          whileTap={whileTap}
+          children={navItems}
+        />
+      </div>
+    </nav>
   );
 };
 

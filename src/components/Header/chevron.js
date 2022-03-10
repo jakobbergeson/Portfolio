@@ -12,7 +12,7 @@ const Chevron = () => {
     visible: {
       opacity: [0, 0.2, 0.4, 0.6, 0.8, 1],
       transition: {
-        delay: 6,
+        delay: 4,
         when: 'beforeChildren',
         mass: 0.2,
       },
@@ -29,9 +29,9 @@ const Chevron = () => {
       opacity: 1,
       transition: {
         type: 'spring',
-        delay: 1.3,
-        stiffness: 120,
-        duration: 1.7,
+        delay: 1,
+        stiffness: 180,
+        duration: 1.3,
         yoyo: Infinity
       }
     }
