@@ -41,8 +41,8 @@ export const navStyles = {
         marginTop: '8px',
         marginBottom: '8px',
         '&:hover': {
+          color: '#17acfa',
           bg: 'primary',
-          color: 'darkBlue',
         },
         'a': {
           m: 0,
@@ -104,4 +104,4 @@ export const navStyles = {
     color: 'primary',
     fontSize: '40px'
   }
-}
+};
