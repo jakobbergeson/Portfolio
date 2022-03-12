@@ -29,12 +29,12 @@ export const headerStyles = {
     WebkitBoxAlign: 'center',
     MsFlexAlign: 'center',
     alignItems: 'center',
-    justifyContent: ['space-evenly', null, 'space-between'],
+    justifyContent: ['center', null, 'space-between'],
   },
   headingBox: {
     boxSizing: 'border-box',
     letterSpacing: ['.2em', null, '.005em'],
-    m: 0,
+    mb: ['40%', 0],
     minWidth: 0,
   },
   heading1: {
@@ -92,4 +92,4 @@ export const headerStyles = {
     borderBottom: '15vh solid #f6f6f6',
     zIndex: 2,
   }
-}
+};
