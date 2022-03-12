@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./menuToggle";
 import { MenuList } from "./menuList";
+import Chevron from '../../Header/chevron';
 import { navStyles } from '../../../utils';
 
 const sidebar = {
@@ -50,6 +51,9 @@ const MobileNav = () => {
       <MenuList
         toggle={() => toggleOpen()}
         children={navItems}
+      />
+      <Chevron
+        animate={isOpen ? 'hidden' : 'visible'}
       />
     </motion.nav>
   );

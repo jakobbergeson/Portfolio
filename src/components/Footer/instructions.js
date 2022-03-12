@@ -6,7 +6,7 @@ import { useIsMedium } from '../../hooks/utils/mediaQuery';
 const Instruction = () => {
 
   const isMedium = useIsMedium();
-  console.log("IS MEDIUM", isMedium);
+
   const insVariant =
     isMedium ?
       {
