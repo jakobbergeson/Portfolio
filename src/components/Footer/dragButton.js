@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from 'react';
-
 
 const DragButton = ({
   x,
@@ -33,16 +32,10 @@ const DragButton = ({
     }
   };
 
-  const onMouseDown = (e) => {
+  function onDrag() {
     setGrab(true);
+    navigator.clipboard.writeText('jakobbergeson.dev@gmail.com');
   };
-
-  const onDragStart = (e) => {
-    return (
-      navigator.clipboard.writeText('jakobbergeson.dev@gmail.com')
-    );
-  };
-
 
   return (
     <motion.div
@@ -87,7 +80,6 @@ const DragButton = ({
         TOGETHER
       </motion.div>
       <motion.div
-        onMouseEnter={() => setGrab(false)}
         sx={{
           borderRadius: '20%',
           position: ['static', null, null, null, null, 'absolute'],
@@ -106,8 +98,8 @@ const DragButton = ({
         }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        onDragStart={onDragStart}
-        onMouseDown={onMouseDown}
+        onMouseEnter={() => setGrab(false)}
+        onDragStart={onDrag}
       >
         <svg
           sx={{
