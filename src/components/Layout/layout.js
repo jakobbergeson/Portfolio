@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <article>
-        <Title title='Portfolio' />
+        <Title />
         <main>{children}</main>
         <Footer />
       </article>
