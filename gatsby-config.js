@@ -4,8 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'Jakob Bergeson',
+    title: 'Jakob Bergeson | Portfolio',
+    description: `Full-Stack Engineer who loves building efficient code and enjoyable user interfaces.`,
+    url: 'https://www.jakobbergeson.com/',
+    image: `/images/Icon_Blue.png`,
+    author: `Jakob Bergeson`,
+    keywords: `React, Javascript, Portfolio, Developer, Engineer, Frontend, Web, Software`,
   },
   plugins: [
 
@@ -36,16 +40,5 @@ module.exports = {
       },
       __key: 'images',
     },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       `Merriweather+Sans\:300,400,500,600,700,800`,
-    //       `Open+Sans\:300,400,500,600,700,800`,
-    //       `Gudea\:400`,
-    //     ],
-    //     display: 'swap'
-    //   }
-    // },
   ],
 };

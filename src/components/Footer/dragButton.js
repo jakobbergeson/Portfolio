@@ -99,7 +99,7 @@ const DragButton = ({
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         onMouseEnter={() => setGrab(false)}
-        onDragStart={onDrag}
+        onClick={onDrag}
       >
         <svg
           sx={{
