@@ -32,7 +32,7 @@ const DragButton = ({
     }
   };
 
-  function onDrag() {
+  function onDragStart() {
     setGrab(true);
     navigator.clipboard.writeText('jakobbergeson.dev@gmail.com');
   };
@@ -99,7 +99,7 @@ const DragButton = ({
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         onMouseEnter={() => setGrab(false)}
-        onClick={onDrag}
+        onDragStart={onDragStart}
       >
         <svg
           sx={{
