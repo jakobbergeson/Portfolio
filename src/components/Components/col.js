@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { useRef } from 'react';
 
 const Col = ({
   sx,

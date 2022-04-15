@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from "react";
 import { jsx } from "theme-ui";
 import { About } from "../About/";
 import { Projects } from "../Projects/";

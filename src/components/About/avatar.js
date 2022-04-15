@@ -102,7 +102,6 @@ const Avatar = () => {
           position: 'absolute',
           top: 0,
           left: 0,
-          top: 0,
           bottom: 0,
         }}
         style={{ y: y2 }}
