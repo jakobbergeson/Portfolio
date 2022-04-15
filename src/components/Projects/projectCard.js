@@ -117,11 +117,16 @@ const ProjectCard = ({
         onHoverEnd={() => {
           setHoverState('hidden');
         }}
-        onTouchMove={() => {
+        onTouchEnd={() => {
           setHoverState('hidden');
         }}
 
-        sxChildStyle={projectCardStyles.imageBox}
+        sxChildStyle={
+          hoverState === 'visible' ?
+            projectCardStyles.imageBox.hover :
+            projectCardStyles.imageBox.notHover
+        }
+        style={{}}
       >
         <Image
           src={sitePic}

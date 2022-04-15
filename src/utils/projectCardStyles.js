@@ -36,23 +36,30 @@ export const projectCardStyles = {
     fontFamily: "'Roboto', sans-serif",
   },
   imageBox: {
-    overflow: 'hidden',
-    position: 'relative',
-    boxShadow: '0 0 1vw 0 #c0c0c0',
-    maxWidth: '500px',
-    mb: [4],
-    minHeight: ['80vw', '330px'],
-    '&:hover': {
+    notHover: {
+      overflow: 'hidden',
+      position: 'relative',
+      boxShadow: '0 0 1vw 0 #c0c0c0',
+      maxWidth: '500px',
+      mb: [4],
+      minHeight: ['80vw', '330px'],
+    },
+    hover: {
+      overflow: 'hidden',
+      position: 'relative',
+      maxWidth: '500px',
+      mb: [4],
+      minHeight: ['80vw', '330px'],
       boxShadow: '0 0 1vw 0 #48cae4',
-    },
-    '&:hover > img': {
-      filter: 'blur(6px)',
-      transform: 'scale(1.1)',
-      transition: '200ms ease-in-out'
-    },
-    '&:hover > div': {
-      opacity: 1,
-      transition: '200ms ease-in-out'
+      '& > img': {
+        filter: 'blur(6px)',
+        transform: 'scale(1.1)',
+        transition: '200ms ease-in-out'
+      },
+      '& > div': {
+        opacity: 1,
+        transition: '200ms ease-in-out'
+      }
     }
   },
   image: {
@@ -98,4 +105,4 @@ export const projectCardStyles = {
     fontSize: ['16px', '18px'],
     mx: 0
   }
-}
+};
